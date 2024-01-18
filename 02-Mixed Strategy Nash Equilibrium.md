@@ -270,13 +270,13 @@ $$
 
 - Step 1: Finding a NE with a specific support
 
-\$\$\$\$p(a\*{-i})u_i(a_i,a\_{-i}) = v_i, i , a_i \_i \\ \\
+$$p(a\*{-i})u_i(a_i,a\_{-i}) = v_i, i , a_i \_i \\ \\
 
 p(a\*{-i})u_i(a_i,a\_{-i}) v_i, i , a_i \_i \\
 
 p_i(a_i) , i , a_i \_i \\ p_i(a_i) = 0, i , a_i \_i \\
 
-p_i(a\*{i}) = 1, i \$\$\$\$
+p_i(a\*{i}) = 1, i $$
 
 - Step 2: Smart heuristic search through all sets of support
 
