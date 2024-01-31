@@ -1,7 +1,5 @@
 02 - Mixed-Strategy Nash Equilibrium
 ================
-Yeonju Kim
-2024-01-19
 
 # 2-1 Mixed Strategies and Nash Equilibrium
 
@@ -9,13 +7,11 @@ Yeonju Kim
 
 - It would be a pretty bad idea to play any deterministic strategy in
   matching pennies
-- Idea: confuse the opponent by playing **randomly** \_ Define a
+- Idea: confuse the opponent by playing **randomly** Define a
   **strategy** $s_i$ for agent $i$ as any probability distribution over
   the actions $A_i$.
-  - **pure strategy**: only one action is played with positive
-    probability
-  - **mixed strategy**: more than one action is played with positive
-    probability
+  - **pure strategy**: only one action is played with a positive probability
+  - **mixed strategy**: more than one action is played with a positive probability
     - these actions are called the **support** of the mixed strategy
 - Let the set of **all strategies** for $i$ be $S_i$
 - Let the set of **all strategy profiles** be
@@ -30,8 +26,8 @@ Yeonju Kim
 - Instead, use the idea of **expected utility** from decision theory:
 
 $$
-u_i(s) = \sum_{a \in A}u_i(a)Pr(a|s) \\
-Pr(a|s) = \prod_{j \in N}s_j(a_j)
+u_i(s)=\sum_{a\in A}u_i(a)Pr(a|s)\\
+Pr(a|s)=\prod_{j\in N}s_j(a_j)
 $$
 
 ### Best Response and Nash Equilibrium
@@ -39,24 +35,26 @@ $$
 - Our definitions of best response and Nash equilibrium generalize from
   actions to strategies
 
-Definition (Best response)  
-$$
-s_i^* \in BR(s_{-1}) \text{ iff } \forall s_i \in S_i, u_i(s_i^*,s_{-i}) \ge u_i(s_i,s_{-i})
-$$
+> [!NOTE]
+> 
+> Definition (Best response)  
+> $$s_i^* \in BR(s_{-1}) \text{ iff } \forall s_i \in S_i, u_i(s_i^*,s_{-i}) \ge u_i(s_i,s_{-i})$$
 
-Definition (Nash equilibrium)  
-$$
-s=<s_1,...,s_n> \text{is a Nash equilibrium iff } \forall i, s_i \in BR(s_{-i})
-$$
+> [!NOTE]
+> 
+> Definition (Nash equilibrium)  
+> $$s=<s_1,...,s_n> \text{is a Nash equilibrium iff } \forall i, s_i \in BR(s_{-i})$$
 
-Theorem (Nash, 1950)  
-*Every finite game has a Nash equilibrium*
+> [!NOTE]
+> 
+> Theorem (Nash, 1950)  
+> *Every finite game has a Nash equilibrium*
 
 ### Example: Matching Pennies
 
-Even thou there is no pure strategy Nash eqilibrium in matching pennies
-game, there is a mixed strategy Nash equilibrium. It is probability of
-(0.5,0.5) for Head and Tail
+Even though there is no pure strategy Nash equilibrium in matching pennies
+game, there is a mixed strategy Nash equilibrium. It is the probability of
+$(0.5,0.5)$ for Head and Tail
 
 <div class="math">
 
@@ -80,8 +78,8 @@ $$
 
 ### Example: Coordination
 
-Mixed stretegy Nash equilibrium for Coordination game is the probability
-of (0.5,0.5) again
+Mixed strategy Nash equilibrium for Coordination game is the probability
+of $(0.5,0.5)$ again
 
 <div class="math">
 
@@ -105,7 +103,7 @@ $$
 
 ### Example: Prisoner’s Dilemma
 
-All of the strategies (C,C), (C,D), (D,C), (D,D) are mixed strategy Nash
+All of the strategies $(C,C), (C,D), (D,C), (D,D)$ are mixed strategy Nash
 equilibrium for Prisoner’s Dilemma
 
 <div class="math">
@@ -158,27 +156,28 @@ $$
 
 </div>
 
-- Let player 2 play B with p, F with 1-p
-- If player 1 best-responds with a mixed strategy, player 2 must make
-  him indifferent between F and B
+- Let player 2 play $B$ with $p$, $F$ with $1-p$
+- If player 1 best-responds with a mixed strategy, player 2 must make him indifferent between $F$ and $B$
 
 $$
-u_1(B) = u_1(F) \\
-2p+0(1-p)=0p+1(1-p) \\
-p=\frac{1}{3}
+u_1(B) = u_1(F)//
+2p+0(1-p)=0p+1(1-p)//
+p=\frac{1}{3}//
 $$
 
 - Likewise, player 1 must randomize to make player 2 indifferent
 
   - Why is player 1 willing to randomize?
 
-- Let player 1 play B with q, F with 1-q $$
-  u_2(B) = u_2(F) \\
-  q+0(1-q)=0q+2(1-q) \\
-  q=\frac{2}{3}
-  $$
+- Let player 1 play $B$ with $q$, $F$ with $1-q$
 
-- Thus the mixed strategies \$(,),(,) \$ are a Nash equilibrium
+$$
+u_2(B) = u_2(F)\\
+q+0(1-q)=0q+2(1-q)\\ 
+q=\frac{2}{3}
+$$
+
+- Thus the mixed strategies $(\frac{2}{3},\frac{1}{3}),(\frac{1}{3},\frac{2}{3})$ are a Nash equilibrium
 
 ### Interpreting Mixed Strategy Equilibria
 
@@ -213,7 +212,7 @@ Two example algorithms for finding NE
 
 ### From Algorithms to Complexity Analysis
 
-Still, finding even a single NAsh equilibrium seems hard; how do we
+Still, finding even a single Nash equilibrium seems hard; how do we
 capture that?
 
 - Enter PPAD (“Polynomial Parity Arguments on Directed graphs”)
@@ -223,17 +222,19 @@ capture that?
   - FNP problems are constructive versions of NP problems (F stands for
     “Functional”)
   - TFNP is a subclass of FNP for problems for which a solution is
-    guaranted to exist (T stands for “Total”)
+    guaranteed to exist (T stands for “Total”)
   - PPAD is a subclass of TFNP where the proofs are based on parity
     arguments in directed graphs
 
 ### The Complexity of the Nash Equilibrium
 
-**Theorem**  
-Computing a Nash equilibrium is PPAD-complete… - for games with $\ge 4$
-players; \[Daskalakis, Goldberg, Papadimitriou, 2005\] - for games with
-3 players; \[Chen, Deng, 2005\] & \[Daskalakis, Papadimitriou, 2005\] -
-for games with 2 players; \[Chen, Deng 2006\]
+> [!NOTE]
+> Theorem
+> 
+> Computing a Nash equilibrium is PPAD-complete… 
+> - for games with $\ge 4$ players; \[Daskalakis, Goldberg, Papadimitriou, 2005\]
+> - for games with 3 players; \[Chen, Deng, 2005\] & \[Daskalakis, Papadimitriou, 2005\]
+> - for games with 2 players; \[Chen, Deng 2006\]
 
 # 2-4 Hardness Beyond 2x2 Games - Advanced
 
@@ -249,52 +250,51 @@ for games with 2 players; \[Chen, Deng 2006\]
   - intense effort on equilibrium algorithms:
     - Kuhn 1996, Mangasarian 1964, **Lemke-Howson, 1964**, Rosenmuller
       1971, …
-  - …all exponential in the worst case
+  - …all exponential in the worst-case
 
 ### The Lemke-Howson Algorithm
 
 - LCP (Linear Complementarity) formulation
 
 $$
-\sum_{k \in A_2}u_1(a_1^j,a_2^k)s_2^k + r_1^j = U_1^* , \forall j \in A_1 \\
+\sum_{k \in A_2}u_1(a_1^j,a_2^k)s_2^k + r_1^j = U_1^* , \forall j \in A_1\\
 \sum_{k \in A_1}u_2(a_1^j,a_2^k)s_2^k + r_1^j = U_2^* , \forall j \in A_2 \\
 \sum_{k \in A_1}s_1^j=1 \\
 \sum_{k \in A_2}s_2^k=1 \\
-\\
 s_1^j \ge 0,s_2^k \ge 0,\forall j \in A_1, \forall k \in A_2 \\
 r_1^j \ge 0,r_2^k \ge 0,\forall j \in A_1, \forall k \in A_2 \\
-r_1^j \times s_1^j =0,r_2^j \times s_2^j =0,\forall j \in A_1, \forall k \in A_2 \\
+r_1^j \times s_1^j =0,r_2^j \times s_2^j =0,\forall j \in A_1, \forall k \in A_2
 $$
 
 ### Support Enumeration Method: Porter et al. 2004
 
 - Step 1: Finding a NE with a specific support
 
-$$p(a\*{-i})u_i(a_i,a\_{-i}) = v_i, i , a_i \_i \\ \\
-
-p(a\*{-i})u_i(a_i,a\_{-i}) v_i, i , a_i \_i \\
-
-p_i(a_i) , i , a_i \_i \\ p_i(a_i) = 0, i , a_i \_i \\
-
-p_i(a\*{i}) = 1, i $$
+$$
+p(a\*{-i})u_i(a_i,a_{-i}) = v_i, i , a_i \_i \\
+p(a\*{-i})u_i(a_i,a_{-i}) v_i, i , a_i \_i \\
+p_i(a_i) , i , a_i \_i \\ 
+p_i(a_i) = 0, i , a_i \_i \\
+p_i(a\*{i}) = 1, I
+$$
 
 - Step 2: Smart heuristic search through all sets of support
 
 ### From Algorithms to Complexity Analysis
 
-So, is it NP-conplete to find a Nash equilibrium?
+So, is it NP-complete to find a Nash equilibrium?
 
 - Strictly speaking, no, since a solution is guaranteed to exist…
 
 - However, it is NP-complete to find a “tiny” bit more info than a Nash
-  equilibrium; e.g. the following are NP-complete:
+  equilibrium; e.g. the following is NP-complete:
 
   - (**Uniqueness**): Given a game $G$, does there exist a unique
     equilibirum in $G$?
   - (**Pareto optimality**): Given a game $G$, does there exist a
     strictly Pareto efficient equilibrium in $G$?
   - (**Guaranteed payoff**): Given a game $G$ and a value $v$, does
-    there exist an equilibrium in which the sum of agents’ utilies is at
+    there exists an equilibrium in which the sum of agents’ utilises is at
     least $k$?
   - (**Action inclusion**): Given a game $G$, and an action
     $a_i \in A_i$ for some player $i \in N$, does there exist an
@@ -334,9 +334,9 @@ $$
 
 </div>
 
-In this example, equilibrium is (0.5,0.5)
+In this example, equilibrium is $(0.5,0.5)$
 
-There is an another example
+There is another example
 
 $$
 \begin{array}{cc} &
@@ -360,26 +360,26 @@ $$
 - $p$ probability goalie goes left; Kicker indifferent: $(1-p)1=0,75p$
   or $p=1/1.75=4/7$
 
-- Goalie goes Left more often than Right (4/7 to 3/7), kicker goes Right
-  with 4/7
+- Goalie goes Left more often than Right $(4/7 to 3/7)$, kicker goes Right
+  with $4/7$
 
 - Goalie’s strategy adjusts, and the kicker actually adjusts to kick
   more to their weak side!
 
-- The Goalie has a slight advantage now, and wins 4/7 of the time
+- The Goalie has a slight advantage now, and wins $4/7$ of the time
 
 - If the goalie still played equal probability, then the kicker could
-  always go left and win 1/2 the time instead of 3/7
+  always go left and win $1/2$ the time instead of $3/7$
 
 - By adjusting the strategy to keep the kicker indifferent, the Goalie
   takes advantage of the kicker’s weak right kick and wins more often!
 
 ### Summary
 
-- A players must be indifferent between the actions he or she randomizes
+- A player must be indifferent between the actions he or she randomizes
   over
 
-- Interesting comparative statics
+- Interesting comparative statistics
 
 - Do players really do this? -\> Next Topic
 
@@ -390,7 +390,7 @@ $$
 
 ### Professional Soccer - Penalty Kicks
 
-- Ignacio Palacios-Heurta (2003) “Professionals Play Minimax” \_Review
+- Ignacio Palacios-Heurta (2003) “Professionals Play Minimax” Review
   of Economic Studies”, Volume 70, pp385-415
 
 - 1417 Penalty kicks from FIFA games: Spain, England, Italy…
@@ -452,7 +452,7 @@ $$
 - Do players randomize well over time? Pretty well…
 
 - How about under pressure? Do they become predictable?
-  Statisticians/Game Theorists starting to keep them honest…
+  Statisticians/Game Theorists are starting to keep them honest…
 
 - Other sports: Tennis players and serves, M. Walker and J.Wooders,
   American Economic Review (2001) “Maximax Play and Wimbeldom” Volume
@@ -461,9 +461,9 @@ $$
 ### Summary
 
 - Some games have mixed strategy equilibria
-- A players must be indifferent between the actions he or she randomizes
+- A player must be indifferent between the actions he or she randomizes
   over
-- Interesting comparative statics
+- Interesting comparative statistics
 - Do see randomization:
   - in (professional) sports
   - in nature: which way a squirrel runs to get out of your way
