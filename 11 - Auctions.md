@@ -146,8 +146,10 @@ Defined by three kinds of rules:
 
 ## 11-2 Bidding in Second-Price Auctions
 
-Theorem  
-Truth-telling is a dominant strategy in a second-price auction
+> [!NOTE]
+> Theorem  
+>
+> Truth-telling is a dominant strategy in a second-price auction
 
 - Tbh, this is VCG mechnism
 
@@ -182,18 +184,22 @@ proof into two cases:
 - intuitively, though, the revealed information doesn’t make any
   difference in the IPV setting
 
-Theorem  
-Under the independent private values model (IPA), it is a **dominant
-strategy** for bidders to bid up to (and not beyond) their valuations in
-both Japanese and English auctions
+> [!NOTE]
+> Theorem  
+>
+> Under the independent private values model (IPA), it is a **dominant
+> strategy** for bidders to bid up to (and not beyond) their valuations in
+> both Japanese and English auctions
 
 ## 11-3 Bidding in First-Price Auctions
 
 #### Equivalence of First-Price and Dutch Auctions
 
-Theorem  
-First-Price (sealed bid) and Dutch auctions are **strategically
-equivalent**
+> [!NOTE]
+> Theorem  
+>
+> First-Price (sealed bid) and Dutch auctions are **strategically
+> equivalent**
 
 - In both, a bidder must decide on the amount s/he’s willing to pay,
   conditional on it being the highest bid
@@ -224,10 +230,12 @@ equivalent**
 
 #### Analysis
 
-Theorem  
-In a first-price auction with two risk-neutral bidders whose valuations
-are IID and drawn from $U(0,1), (\frac{1}{2}v_1,\frac{1}{2}v_2)$ is a
-Bayes-Nash equilibrium strategy profile
+> [!NOTE]
+> Theorem  
+>
+> In a first-price auction with two risk-neutral bidders whose valuations
+> are IID and drawn from $U(0,1), (\frac{1}{2}v_1,\frac{1}{2}v_2)$ is a
+> Bayes-Nash equilibrium strategy profile
 
 - IID (Independent and identical distributed)
 
@@ -266,13 +274,15 @@ player 2 is analogous, given the symmetry of the game
 
   - Need to solve for equilibrium
 
-Theorem  
-In a first-price sealed bid auction with $n$ risk-neutral agents whose
-valuations are independently drawn from a uniform distribution on
-$[0,1]$ the (unique) symmetric equilibrium is given by the strategy
-profile $(\frac{n-1}{n}v_1, ..., \frac{n-1}{n}v_n)$
+> [!NOTE]
+> Theorem  
+>
+> In a first-price sealed bid auction with $n$ risk-neutral agents whose
+> valuations are independently drawn from a uniform distribution on
+> $[0,1]$ the (unique) symmetric equilibrium is given by the strategy
+> profile $(\frac{n-1}{n}v_1, ..., \frac{n-1}{n}v_n)$
 
-- proven using similar argument
+- proven using a similar argument
 
 - A broader problem: the proof only *verified* an equilibrium strategy
 
@@ -284,10 +294,12 @@ profile $(\frac{n-1}{n}v_1, ..., \frac{n-1}{n}v_n)$
 
 - Which auction? To some extent, it doesn’t matter
 
-Theorem (Revenue Equivalence Theorem)  
-Assume that each of $n$ risk-neutral agents has an independent private
-valuation for a single good at auction, each drawn from cumulative
-distribution $F$. Then any two auction mechanisms in which
+> [!NOTE]
+> Theorem (Revenue Equivalence Theorem)  
+>
+> Assume that each of $n$ risk-neutral agents has an independent private
+> valuation for a single good at auction, each drawn from cumulative
+> distribution $F$. Then any two auction mechanisms in which
 
 - in equilibrium, the good is always allocated in the same way; and
 
@@ -332,9 +344,7 @@ single good
   - thus, the expected value of the second-highest bid is the
     first-order statistic of $n-1$ draws from $[0,v_i]$:
 
-    $$
-    \frac{n+1-k}{n+1}v_{max}=\frac{(n-1)+1-(1)}{(n-1)+1}(v_i)=\frac{n-1}{n}v_i
-    $$
+$$\frac{n+1-k}{n+1}v_{max}=\frac{(n-1)+1-(1)}{(n-1)+1}(v_i)=\frac{n-1}{n}v_i$$
 
   - This shows how we derived our earlier claim about $n$-bidder
     first-price auctions
@@ -346,16 +356,18 @@ single good
 
 - $p_i(v_i|s): i$’s **ex interim expected payment**
 
-Theorem (Bayes-Nash Equilibrium Characterization)  
-When values are drawn from a continuous joint distribution $F$ and
-agents are risk neutral, a strategy profile $s$ is in Bayes-Nash
-equilibrium only if for all $i$:
-
-1.  (monotonicity) $\chi_i(v_i|s)$ is monotone non-decreasing, and
-2.  (payment identity)
-    $p_i(v_i|s) = v_i\chi_i (v_i|s)-\int_0^{v_i}\chi_i(z|s)dz+p_i(0|s)$,
-    where often $p_i(0|s)=o$. If $s$ is onto then the converse also
-    holds
+> [!NOTE]
+> Theorem (Bayes-Nash Equilibrium Characterization)  
+>
+> When values are drawn from a continuous joint distribution $F$ and
+> agents are risk neutral, a strategy profile $s$ is in Bayes-Nash
+> equilibrium only if for all $i$:
+>
+> 1.  (monotonicity) $\chi_i(v_i|s)$ is monotone non-decreasing, and
+> 2.  (payment identity)
+>    $p_i(v_i|s) = v_i\chi_i (v_i|s)-\int_0^{v_i}\chi_i(z|s)dz+p_i(0|s)$,
+>    where often $p_i(0|s)=o$. If $s$ is onto then the converse also
+>    holds
 
 #### Conclusion
 
@@ -393,7 +405,7 @@ equilibrium only if for all $i$:
 
   - Allow $F_i \not= F_j:$ asymmetric auctions
 
-- the risk neutral seller knows each $F_i$ and has no value for the
+- the risk-neutral seller knows each $F_i$ and has no value for the
   object
 
 The auction that maximizes the seller’s expected revenue subject to (ex
@@ -446,34 +458,40 @@ compatbility for the buyers is an **optimal auction**
 
 #### Designing Optimal Auctions
 
-Definition (Virtual Valuation)  
-Bidder $i$’s **virtual valuation** is
-$\psi_i(v_i)=v_i-\frac{1-F_i(v_i)}{f_i(v_i)}$
+> [!NOTE]
+> Definition (Virtual Valuation)  
+>
+> Bidder $i$’s **virtual valuation** is
+> $\psi_i(v_i)=v_i-\frac{1-F_i(v_i)}{f_i(v_i)}$
 
 Let us assume this is increasing in $v_i$ (e.g., for a uniform
 distribution it is $2v_i -1$)
 
-Definition (bidder-specific reserve price)  
-Bidder $i$’s bidder-specific reserve price $r_i^*$ is the value for
-which $\psi_i(r_i^*) =0$
+> [!NOTE]
+> Definition (bidder-specific reserve price)  
+>
+> Bidder $i$’s bidder-specific reserve price $r_i^*$ is the value for
+> which $\psi_i(r_i^*) =0$
 
 #### Myerson’s Optimal Auctions
 
-Theorem (Myerson, 1981)  
-The optimal (single-good) auction in terms of a direct mechanism: The
-good is sold to the agent $i=arg \max_i \psi_i(\hat{v_i})$, as long as
-$v_i \ge r_i^*$. If the good is sold, the winning agent $i$ is charged
-the smallest valuation that he could have declared while still remaining
-the winner:
+> [!NOTE]
+> Theorem (Myerson, 1981)  
+>
+> The optimal (single-good) auction in terms of a direct mechanism: The
+> good is sold to the agent $i=arg \max_i \psi_i(\hat{v_i})$, as long as
+> $v_i \ge r_i^*$. If the good is sold, the winning agent $i$ is charged
+> the smallest valuation that he could have declared while still remaining
+> the winner:
+>
+> $$\inf\{ v_i^*: \psi_i(v_i^*) \ge 0 \text{ and } \forall j \not=i, \psi_i(v_i^*)\ge\psi_j(\hat{v_j)}\}$$
 
-$$
-\inf\{ v_i^*: \psi_i(v_i^*) \ge 0 \text{ and } \forall j \not=i, \psi_i(v_i^*)\ge\psi_j(\hat{v_j)}\}
-$$
-
-Corollary (Myerson, 1981)  
-In a symmetric setting, the optimal (single-good) auction is a second
-price auction with a reserve price of $r^*$ that solves
-$r^* - \frac{1-F(r^*)}{f(r^*)}=0$
+> [!NOTE]
+> Corollary (Myerson, 1981) 
+>
+> In a symmetric setting, the optimal (single-good) auction is a second
+> price auction with a reserve price of $r^* $ that solves
+> $r^* - \frac{1-F(r^*)}{f(r^*)}=0$
 
 #### Analyzing optimal auctions
 
@@ -484,9 +502,7 @@ Optimal Auction
 - $i$ is charged the smallest valuation that he could have declared
   while still remaining the winner,
 
-  $$
-  \inf\{ v_i^*: \psi_i(v_i^*) \ge 0 \text{ and } \forall j \not=i, \psi_i(v_i^*)\ge\psi_j(\hat{v_j)}\}
-  $$
+$$\inf\{v_i^* : \psi_i(v_i^*) \ge 0 \text{ and } \forall j \not = i, \psi_i(v_i^*) \ge \psi_j(\hat{v_ j)}\}$$
 
 - Is this VCG?
 
