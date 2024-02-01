@@ -1,11 +1,9 @@
 07 - Coalitional Games
 ================
-Yeonju Kim
-2024-01-19
 
-# 7-1 Coalitional Game Theory
+## 7-1 Coalitional Game Theory
 
-### Introduction
+#### Introduction
 
 - Our focus is on what **group of agents**, rather than individual
   agents, can achieve
@@ -21,7 +19,7 @@ Yeonju Kim
 
 - …instead, we take the payoffs to a coalition as given
 
-### Definition
+#### Definition
 
 - Transferable utility assumption:
 
@@ -41,7 +39,7 @@ where
   real-valued payoff $v(S)$ that the coalition’s members can distribute
   among themselves. We assume that $v(\not0)=o$
 
-### Using Coalitional Game Theory
+#### Using Coalitional Game Theory
 
 Questions we use coalitional game theory to answer:
 
@@ -51,11 +49,13 @@ Questions we use coalitional game theory to answer:
 The answer to (1) is often “the grand coalition” (all agent in $N$)
 though this can depend on having made the right choice about (2)
 
-### Superadditive games
+#### Superadditive games
 
-Definition (Superadditive game)  
-A game $G=(N,u)$ is **superadditive** if for all $S,T \subset N$, if
-$S \cap T = \not0$, then $v(S\cup T) \ge v(S)+v(T)$
+> [!NOTE]
+> Definition (Superadditive game)  
+>
+> A game $G=(N,u)$ is **superadditive** if for all $S,T \subset N$, if
+> $S \cap T = \not0$, then $v(S\cup T) \ge v(S)+v(T)$
 
 - Superadditivity is justified when coalitions can always work without
   interfering with one another
@@ -65,7 +65,7 @@ $S \cap T = \not0$, then $v(S\cup T) \ge v(S)+v(T)$
 
   - implies that the grand coalition has the highest payoff
 
-### Analyzing coalitional games
+#### Analyzing coalitional games
 
 1.  Which coalition will form?
     1.  we’ll consider cases where the answer is **the grand coalition**
@@ -74,7 +74,7 @@ $S \cap T = \not0$, then $v(S\cup T) \ge v(S)+v(T)$
     1.  in order to be **fair**
     2.  in order to be **stable**
 
-# 7-2 The Shapley Value
+## 7-2 The Shapley Value
 
 - Lloyd Shapley’s idea: members should receive payments or shares
   proportional to their marginal contributions
@@ -92,7 +92,7 @@ $S \cap T = \not0$, then $v(S\cup T) \ge v(S)+v(T)$
 
 - Shapley’s axioms give us one answer
 
-### Summetry
+#### Summetry
 
 - $i$ and $j$ are **interchangeable** relative to $v$ if they always
   contribute the same amount to every coalition of the other agents
@@ -100,36 +100,42 @@ $S \cap T = \not0$, then $v(S\cup T) \ge v(S)+v(T)$
   - for all $S$ that contains neither $i$ nor $j$,
     $v(S \cup \{i\}) = v(S \cup \{j\})$
 
-Axion (Symmetry)  
-For any $v$, if $i$ and $j$ are interchangeable then
-$\psi_i (N,v) =\psi_j(N,v)$
+> [!NOTE]
+> Axion (Symmetry)  
+>
+> For any $v$, if $i$ and $j$ are interchangeable then
+> $\psi_i (N,v) =\psi_j(N,v)$
 
 - Interchangeable agents should receive the same shares/payments
 
-### Dummy Players
+#### Dummy Players
 
 - $i$ is a **dummy player** if the amount that $i$ contributes to any
   coalition is 0
 
   - for all $S: v(S \cup \{i\}) = v(S)$
 
-Axiom (Dummy player)  
-For any $v$, if $i$ is a dummy player then $\psi_i(N,v)=0$
+> [!NOTE]
+> Axiom (Dummy player)  
+>
+> For any $v$, if $i$ is a dummy player then $\psi_i(N,v)=0$
 
 - Dummy players should receive nothing
 
-### Additivity
+#### Additivity
 
 - If we can separate a game into two parts $v =v_1+v_2$, then we should
   be able to decompose the payments:
 
-Axiom (Additivity)  
-For any two $v_1$ and $v_2$,
-$\psi_i(N,v_1+v_2)=\psi_i(N,v_1)+\psi_i(N,v_2)$ for each $i$, where the
-game $(N,v_1+v_2)$ is defined by $(v_1+v_2)(S)=v_1(S)+v_2(S)$ for every
-coalition $S$
+> [!NOTE]
+> Axiom (Additivity)  
+>
+> For any two $v_1$ and $v_2$,
+> $\psi_i(N,v_1+v_2)=\psi_i(N,v_1)+\psi_i(N,v_2)$ for each $i$, where the
+> game $(N,v_1+v_2)$ is defined by $(v_1+v_2)(S)=v_1(S)+v_2(S)$ for every
+> coalition $S$
 
-### Shapley Value
+#### Shapley Value
 
 Given a coalitional game $(N,v)$, the **Shapley Value** divide payoffs
 among players according to:
@@ -140,13 +146,15 @@ $$
 
 for each player $i$
 
-Theorem  
-Given a coalitional game $(N,v)$, there is a unique play division
-$x(v)=\phi(N,v)$ that divides the full payoff of the grand coalition and
-that satisfies the Symmetry, Dummy player and Additivity axioms: the
-Shapley Value
+> [!NOTE]
+> Theorem  
+>
+> Given a coalitional game $(N,v)$, there is a unique play division
+> $x(v)=\phi(N,v)$ that divides the full payoff of the grand coalition and
+> that satisfies the Symmetry, Dummy player and Additivity axioms: the
+> Shapley Value
 
-### Understanding the Shapley Value
+#### Understanding the Shapley Value
 
 $$
 \phi_i(N,v)=\frac{1}{N!}\sum_{s \subseteq N \setminus \{i\}} |S|!(|N|-|S|-1)![v(S\cup \{i\})-v(S)]
@@ -166,7 +174,7 @@ be built up
 - Sum over all possible sets $S$ and average by dividing by $|N|!$: the
   number of possible orderings of all the agnets
 
-### Two Partners Sharing their Profits:
+#### Two Partners Sharing their Profits:
 
 $v(\{1\})=1,v(\{2\})=2, v(\{1,2\})=4$
 
@@ -179,7 +187,7 @@ $v(\{1\})=1,v(\{2\})=2, v(\{1,2\})=4$
 
 - $\phi_2 = 2.5$
 
-### Shapley Value
+#### Shapley Value
 
 - The Shapley Value allocates the value of a group according to marginal
   contribution calculations
@@ -189,9 +197,9 @@ $v(\{1\})=1,v(\{2\})=2, v(\{1,2\})=4$
 - Other axioms and approaches lead to other allocations of value - for
   example the “Core” up next
 
-# 7-3 The Core
+## 7-3 The Core
 
-### Stable payoff division
+#### Stable payoff division
 
 - The Shapley value defined a **fair way** of dividing the grand
   coalition’s payment among its members
@@ -205,7 +213,7 @@ $v(\{1\})=1,v(\{2\})=2, v(\{1,2\})=4$
   - Unfortunately, sometimes smaller coalitions can be more attractive
     for subsets of the agents, even if they lead to lower value overall
 
-### Example: Voting Game
+#### Example: Voting Game
 
 Example (Voting Game)  
 A parliament is made up of four political parties, $A,B,C$ and $D$,
@@ -222,7 +230,7 @@ spend
   50 on its own, $A$ and $B$ have incentive to defect and divide the
   \\100 million between them (e.g., (75,25))
 
-### The Core
+#### The Core
 
 - Under what payment divisions would the agents **want to form the grand
   coalition**?
@@ -230,12 +238,12 @@ spend
 - They would want to do so if and only if the payment profile is drawn
   from a set called the **core**
 
-Definition (Core)  
-A payoff vector $x$ is in the **core** of a coalitional game $(N,v)$ iff
-
-$$
-\forall S \subseteq N, \sum_{i \in S}x_i \ge v(S)
-$$
+> [!NOTE]
+> Definition (Core)  
+>
+> A payoff vector $x$ is in the **core** of a coalitional game $(N,v)$ iff
+>
+> $$\forall S \subseteq N, \sum_{i \in S}x_i \ge v(S)$$
 
 - The sum of payoffs to the agents in any subcoalition $S$ is at least
   as much as they could earn on their own
@@ -243,7 +251,7 @@ $$
 - Analogous to **Nash equilibrium**, except that it allows deviations by
   groups of agents
 
-### Existence and Uniqueness
+#### Existence and Uniqueness
 
 1.  Is the core always \_\_\_non empty\_\_? No
 
@@ -272,21 +280,27 @@ $$
 
   - all winning coalitions need the support of these two parties
 
-### Simple Games
+#### Simple Games
 
-Definition (Simple game)  
-A game $G=(N,v)$ is **simple** if for all
-$S \subset N, v(S) \in \{0,1\}$
+> [!NOTE]
+> Definition (Simple game)  
+>
+> A game $G=(N,v)$ is **simple** if for all
+> $S \subset N, v(S) \in \{0,1\}$
 
-Definition (Veto player)  
-A player $i$ is a **veto player** if $v(N \setminus\{i\}) = 0$
+> [!NOTE]
+> Definition (Veto player)  
+>
+> A player $i$ is a **veto player** if $v(N \setminus\{i\}) = 0$
 
-Theorem  
-In a simple game the core is empty iff there is no veto player. If there
-are veto players, the core consists of all payoff vectors in which the
-nonveto players get 0
+> [!NOTE]
+> Theorem  
+>
+> In a simple game the core is empty iff there is no veto player. If there
+> are veto players, the core consists of all payoff vectors in which the
+> nonveto players get 0
 
-### Airport Game
+#### Airport Game
 
 Example (Airport game)  
 Several nearby cities need airport capacity, with different cities
@@ -299,25 +313,32 @@ cities, and $v(S)$ is the sum of the costs of building runways for each
 city in $S$ minus the cost of the largest runway required by any city in
 $S$
 
-### Convex games
+#### Convex games
 
-Definition (Convex game)  
-A game $G=(N,v)$ is **convex** if for all
-$S,T \subset N, v(S \cup T) \ge v(S)+v(T)-v(S\cap T)$
+> [!NOTE]
+> Definition (Convex game)  
+>
+> A game $G=(N,v)$ is **convex** if for all
+> $S,T \subset N, v(S \cup T) \ge v(S)+v(T)-v(S\cap T)$
 
 - Convexity is a stronger condition than superadditivity
 
 - The Airport game is convex
 
-Theorem  
-Every convex game has a nonempty core
+> [!NOTE]
+> Theorem  
+>
+> Every convex game has a nonempty core
 
-Theorem  
-In every convex game, the Shapley value is in the core
 
-# 7-4 Comparing the Core and Shapley value in an Example
+> [!NOTE]
+> Theorem
+>   
+> In every convex game, the Shapley value is in the core
 
-### Compare Core and Shapley Value in an Example
+## 7-4 Comparing the Core and Shapley value in an Example
+
+#### Compare Core and Shapley Value in an Example
 
 - UN security council: 15 members
 
@@ -331,7 +352,7 @@ In every convex game, the Shapley value is in the core
 
   - China, France, Russia, UK,US are labeled {1,2,3,4,5}
 
-  - $v(S)=1$ if {1,2,3,4,5} $\subset S$ and $\# S \ge 8$
+  - $v(S)=1$ if {1,2,3,4,5} $\subset S$ and $\sharp S \ge 8$
 
   - $v(S)=0$ otherwise
 
@@ -339,7 +360,7 @@ In every convex game, the Shapley value is in the core
 
   - 1 permanent member with a veto and 2 temporary members
 
-  - $v(S)=1$ is $1 \in S$ and $\#S \ge 2$
+  - $v(S)=1$ is $1 \in S$ and $\sharp S \ge 2$
 
   - $v(S)=0$ otherwise
 
@@ -372,7 +393,7 @@ In every convex game, the Shapley value is in the core
 | 3   | 1,3 | 1,2,3 | 1/6 |
 | 3   | 2,3 | 1,2,3 | 1/6 |
 
-### Cooperative Games
+#### Cooperative Games
 
 - Model complex multilateral bargaining and coalition formation, without
   specifying the particulars of a normal or extensive form
@@ -383,6 +404,6 @@ In every convex game, the Shapley value is in the core
   - Shapley Value: Based on marginal contributions: what does each
     player contribute to each possible coalition
 
-### Resources
+#### Resources
 
 Game Theory: <https://www.coursera.org/learn/game-theory-1>
