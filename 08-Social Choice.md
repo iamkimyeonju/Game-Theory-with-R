@@ -45,12 +45,16 @@ Given is a set of agent $N=\{1,2,…,n\}$, a finite set of outcomes (or
 alternatives, or candidates) $O$, and the linear orders on the outcomes,
 $L_{NS}$
 
-Definition (Social choice function)  
-A **social choice function** is a function $C:L_{NS}^n \rightarrow Q$
+> [!NOTE]
+> Definition (Social choice function)  
+>
+> A **social choice function** is a function $C:L_{NS}^n \rightarrow Q$
 
-Definition (Social welfare function)  
-A **social welfare function** (or social welfare ordering) is a function
-$W: L_{NS}^n \rightarrow L_{NS}$
+> [!NOTE]
+> Definition (Social welfare function)  
+>
+> A **social welfare function** (or social welfare ordering) is a function
+> $W: L_{NS}^n \rightarrow L_{NS}$
 
 #### Voting Schemes: Scoring Rules
 
@@ -174,29 +178,37 @@ be chosen
 
 #### Pareto Efficiency
 
-Definition (Pareto Efficiency (PE))  
-$W$ is **Pareto efficient** if whenever all agents agree on the ordering
-of two outcomes, the social welfare function select that ordering
+> [!NOTE]
+> Definition (Pareto Efficiency (PE))  
+>
+> $W$ is **Pareto efficient** if whenever all agents agree on the ordering
+> of two outcomes, the social welfare function select that ordering
 
 #### Independence of Irrelevant Alternatives
 
-Definition (Independence of Irrelevant Alternatives (IIA))  
-$W$ is **independent of irrelevant alternatives** if the selected
-ordering between two outcomes depends only on the relative orderings
-they are giving by the agents
+> [!NOTE]
+> Definition (Independence of Irrelevant Alternatives (IIA))  
+>
+> $W$ is **independent of irrelevant alternatives** if the selected
+> ordering between two outcomes depends only on the relative orderings
+> they are giving by the agents
 
 #### Dictatorship
 
-Definition (Dictatorship)  
-$W$ has a **dictator** if there exists a single agent whose preferences
-always determine the social ordering
+> [!NOTE]
+> Definition (Dictatorship)  
+>
+> $W$ has a **dictator** if there exists a single agent whose preferences
+> always determine the social ordering
 
 #### Arrow’s Theorem
 
-Theorem (Arrow, 1951)  
-Any social welfare function $W$ over three or more outcomes that is
-Pareto efficient and independent of irrelevant alternatives is
-dictatorial
+> [!NOTE]
+> Theorem (Arrow, 1951)  
+>
+> Any social welfare function $W$ over three or more outcomes that is
+> Pareto efficient and independent of irrelevant alternatives is
+> dictatorial
 
 ## 8-4 Arrow’s Theorem
 
@@ -226,31 +238,37 @@ dictatorial
 
 #### Pareto Efficiency
 
-Definition (Pareto Efficiency (PE))  
-$W$ is **Pareto efficiency** if for any
-$o_1,o_2 \in O, \forall i \ o_1 \succ_i o_2$ implies that
-$o_1 \succ_W o_2$
+> [!NOTE]
+> Definition (Pareto Efficiency (PE))  
+>
+> $W$ is **Pareto efficiency** if for any
+> $o_1,o_2 \in O, \forall i \ o_1 \succ_i o_2$ implies that
+> $o_1 \succ_W o_2$
 
 - When all agents agree on the ordering of two outcomes, the social
   welfare function must select that ordering
 
 #### Independence of Irrelevant Alternatives
 
-Definition (Independence of Irrelevant Alternatives (IIA))  
-$W$ is **independent of irrelevant alternatives** if, for any
-$o_1,o_2 \in O$ and any two preference profiles
-$[\succ'], [\succ''] \in L^n, \forall i \ (o_1 \succ'i o_2$ if and only
-if $o_1 \succ''_i o_2$) implies that $(o_1 \succ_{W([\succ'])} o_2$ if
-and only if $o_2 \succ_{W([\succ''])} o_2$
+> [!NOTE]
+> Definition (Independence of Irrelevant Alternatives (IIA))  
+>
+> $W$ is **independent of irrelevant alternatives** if, for any
+> $o_1,o_2 \in O$ and any two preference profiles
+> $[\succ'], [\succ''] \in L^n, \forall i \ (o_1 \succ'i o_2$ if and only
+> if $o_1 \succ''_i o_2$) implies that $(o_1 \succ_{W([\succ'])} o_2$ if
+> and only if $o_2 \succ_{W([\succ''])} o_2$
 
 - the selected ordering between two outcomes should depend only on the
   relative orderings they are given by the agents
 
 #### Non-dictatorship
 
-Definition (Non-dictatorship)  
-$W$ does not have a dictator if
-$\neg\exists i \forall o_1,0_2(o_1 \succ_i o_2 \implies o_1 \succ_W o_2)$
+> [!NOTE]
+> Definition (Non-dictatorship)  
+>
+> $W$ does not have a dictator if
+> $\neg\exists i \forall o_1,0_2(o_1 \succ_i o_2 \implies o_1 \succ_W o_2)$
 
 - There does not exist a single agent whose preferences always determine
   the social orderings
@@ -259,10 +277,11 @@ $\neg\exists i \forall o_1,0_2(o_1 \succ_i o_2 \implies o_1 \succ_W o_2)$
   property
 
 #### Arrow’s Theorem
-
-Theorem (Arrow, 1951)  
-Any social welfare function $W$ that is Pareto efficient and independent
-of irrelevant alternatives is dictatorial
+> [!NOTE]
+> Theorem (Arrow, 1951)  
+>
+> Any social welfare function $W$ that is Pareto efficient and independent
+> of irrelevant alternatives is dictatorial
 
 We will assume that $W$ is both PE and IIA, and show that $W$ must be
 dictatorial. Our assumption that $|O| \ge 3$ is necessary for this
@@ -372,36 +391,44 @@ the same agent.
 
 #### Weak Pareto Efficiency
 
-Definition (Weak Pareto Efficiency)  
-A social choice function $C$ is **weakly Pareto efficient** if it never
-selects an outcome $o_2$ when there exists another outcome $o_1$ such
-that $\forall i \in N, o_1 \succ_i o_2$
+> [!NOTE]
+> Definition (Weak Pareto Efficiency)  
+>
+> A social choice function $C$ is **weakly Pareto efficient** if it never
+> selects an outcome $o_2$ when there exists another outcome $o_1$ such
+> that $\forall i \in N, o_1 \succ_i o_2$
 
 - A dominated outcome can’t be chosen
 
 #### Monotonicity
 
-Definition (Monotonicity)  
-$C$ is **monotonic** if, for any $o \in O$ and any preference profile
-$[\succ] \in L^n$ with $C([\succ])=o$, then for any other preference
-profile $[\succ']$ with the property that
-$\forall i \in N, \forall o'\in O, o \succ'_i o'$ if $o \succ_i o'$, it
-must be that $C([\succ'])=o$.
+> [!NOTE]
+> Definition (Monotonicity)  
+>
+> $C$ is **monotonic** if, for any $o \in O$ and any preference profile
+> $[\succ] \in L^n$ with $C([\succ])=o$, then for any other preference
+> profile $[\succ']$ with the property that
+> $\forall i \in N, \forall o'\in O, o \succ'_i o'$ if $o \succ_i o'$, it
+> must be that $C([\succ'])=o$.
 
 - an outcome $o$ must remain the winner whenever the support for it is
   increased in a preference profile under which $o$ was already winning
 
 #### Dictatorship
 
-Definition (Dictatorship)  
-$C$ is **dictatorial** if there exists an agent $j$ such that $C$ always
-selects the top choice in $j$’s preference ordering
+> [!NOTE]
+> Definition (Dictatorship)  
+>
+> $C$ is **dictatorial** if there exists an agent $j$ such that $C$ always
+> selects the top choice in $j$’s preference ordering
 
 #### The bad news
 
-Theorem (Muller-Satterthwaite, 1977)  
-Any social choice function that is weakly Pareto efficient and monotonic
-is dictatorial
+> [!NOTE]
+> Theorem (Muller-Satterthwaite, 1977)  
+> 
+> Any social choice function that is weakly Pareto efficient and monotonic
+> is dictatorial
 
 - Perhaps contrary to intuition, social choice functions are no simpler
   than social welfare functions after all
