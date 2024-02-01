@@ -164,7 +164,7 @@ $$
 A **Bayesian equilibrium** is a mixed strategy profile $s$ that
 satisfies
 
-$$s_i \in arg /max_{s'_i}EU_i(s'_i,s _{-1}|\theta_i)$$
+$$s_i \in arg \max_{s'_i}EU_i(s'_i,s _{-1}|\theta_i)$$
 
 for each $i$ and $\theta \in \Theta_i$
 
@@ -174,7 +174,7 @@ an ex ante formulation:
 If $p(\theta_i)>0$ for all $\theta_i \in \Theta_i$, then this is
 equivalent to requiring that
 
-$$s_i \in arg /max_{s'_i}EU _ i(s'_i,s _{-1}|\theta_i) = s _i \in arg max _{s'_i}\sum p(\theta_i)EU_i(s' _i,s _{-1}|\theta_i)$$
+$$s_i \in arg \max_{s'_i}EU _ i(s'_i,s _{-1}|\theta_i) = s _i \in arg max _{s'_i}\sum p(\theta_i)EU_i(s' _i,s _{-1}|\theta_i)$$
 
 for each $i$
 
