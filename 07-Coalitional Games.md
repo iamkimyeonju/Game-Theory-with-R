@@ -253,7 +253,7 @@ spend
 
 #### Existence and Uniqueness
 
-1.  Is the core always \_\_\_non empty\_\_? No
+1.  Is the core always **non empty**? No
 
 - Consider again the voting game
 
