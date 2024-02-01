@@ -10,40 +10,44 @@
 
 - Start with a set of agents in a Bayesian game setting (but no actions)
 
-Definition (Bayesian game setting)  
-A **Bayesian game setting** is a tuple $(N,O,\Theta,p,u)$, where
-
-- $N$ is a finite set of agents
-
-- $O$ is a set of outcomes
-
-- $\Theta = \Theta_1 \times \cdots \times \Theta_n$ is a set of possible
-  joint type vectors
-
-- $p$ is a (common prior) probability distribution on $\Theta$
-
-- $u=(u_1, …, u_n)$, where $u_i: O \times \Theta \mapsto \mathbb{R}$ is
-  the utility function for each player $i$
+> [!NOTE]
+> Definition (Bayesian game setting)  
+>
+> A **Bayesian game setting** is a tuple $(N,O,\Theta,p,u)$, where
+>
+> - $N$ is a finite set of agents
+>
+> - $O$ is a set of outcomes
+>
+> - $\Theta = \Theta_1 \times \cdots \times \Theta_n$ is a set of possible
+>  joint type vectors
+>
+> - $p$ is a (common prior) probability distribution on $\Theta$
+>
+> - $u=(u_1, …, u_n)$, where $u_i: O \times \Theta \mapsto \mathbb{R}$ is
+>  the utility function for each player $i$
 
 #### Mechanism Design
 
-Definition (Mechanism)  
-A **mechanism** (for a Bayesian game setting $(N,O,\Theta,p,u))$ is a
-pair $(A,M)$, where
-
-- $A=A_1 \times \cdots \times A_n$, where $A_i$ is the set of actions
-  available to agent $i \in N$
-
-- $M: A \mapsto \prod(O)$ maps each action profile to a distribution
-  over outcomes
-
-- Thus, the designer gets to specify
-
-  - the action sets for the agents
-
-  - the mapping to outcomes, over which agents have utility
-
-  - **can’t** change outcomes; agents’ preferences or type spaces
+> [!NOTE]
+> Definition (Mechanism)  
+>
+> A **mechanism** (for a Bayesian game setting $(N,O,\Theta,p,u))$ is a
+> pair $(A,M)$, where
+>
+> - $A=A_1 \times \cdots \times A_n$, where $A_i$ is the set of actions
+>  available to agent $i \in N$
+>
+> - $M: A \mapsto \prod(O)$ maps each action profile to a distribution
+>  over outcomes
+>
+> - Thus, the designer gets to specify
+>
+>  - the action sets for the agents
+>
+>  - the mapping to outcomes, over which agents have utility
+>
+>  - **can’t** change outcomes; agents’ preferences or type spaces
 
 #### What we’re up to
 
@@ -70,7 +74,7 @@ Definition (Implementation in dominant strategies)
 Given a Bayesian game setting $(N,O,\Theta,p,u)$, a mechanism $(A,M)$ is
 an **implementation in dominant strategies** of a social choice function
 $C$ (over $N$ and $O$) if for any vector of utility function $u$, the
-game has an equilibrium in dominant strategies, and in any such
+game has an equilibrium in dominant strategies and in any such
 equilibrium $a^*$ we have $M(a^*)=C(u)$
 
 #### Implementation in Bayes-Nash equilibrium
@@ -189,7 +193,7 @@ Forms of implementation:
 
   - All vote for candidate $b$ is an equilibrium,
 
-  - All vote for candidate $b$ is an equilibrium, (not sensible?)
+  - All votes for candidate $b$ is an equilibrium, (not sensible?)
 
   - A ‘two candidate’ equilibrium (see ‘Duverger’s Law’):
 
@@ -202,7 +206,7 @@ Forms of implementation:
 
 #### One Possible ‘Direct Mechanism’ for Plurality Rule
 
-- Voter states type in
+- Voter status type in
   $\{\tilde{\theta_i}, \hat{\theta_i}, \bar{\theta_i}\}$
 
 - Mechanism translates type announcement into vote for favorite
@@ -223,7 +227,7 @@ Forms of implementation:
 
 ## 9-3 Revelation Principle
 
-![](images/revelation%201.png)
+![](assets/images/revelation%201.png)
 
 - It turns out that any social choice function that can be implemented
   by any mechanism can be implemented by a **truthful, direct**
@@ -236,7 +240,7 @@ Forms of implementation:
 - Recall that a mechanism defines a game, and consider an equilibrium
   $s=(s_1,…,s_n)$
 
-![](images/revelation%202.png)
+![](assets/images/revelation%202.png)
 
 - We can construct a new **direct** mechanism, as shown above
 
@@ -255,7 +259,7 @@ Forms of implementation:
     original equilibrium of interest
 
   - however, in the case of indirect, mechanisms, even if the indirect
-    mechanism had a unique equilibrium, the the revelation mechanism can
+    mechanism had a unique equilibrium, the revelation mechanism can
     also have new, bad equilibria
 
 - So what is the revelation principle **good for**?
@@ -310,7 +314,7 @@ Forms of implementation:
 - Voter states type in
   $\{\tilde{\theta_i}, \hat{\theta_i}, \bar{\theta_i}\}$
 
-- Mechanism translates every type announcement into vote $a$:
+- Mechanism translates every type of announcement into vote $a$:
 
   - saying $\tilde{\theta_i}$ is as if voting for $a$
 
@@ -351,21 +355,23 @@ social choice functions
 
 #### Impossibility Result
 
-Theorem (Gibbard-Satterthwaite)  
-Consider a social choice function $C: L^n \mapsto O$. suppose that
-
-1.  there are at least three outcomes so that $|O| \ge 3$ and
-2.  $C$ is onto; that is, for every $o \in O$ there is a preference
-    profile $[\succ]\in L^n$ such that $C([\succ])=o$
-
-Truthful reporting of preferences is a dominant strategy for each agent
-$i$ and each preference $\succ_i \in L$ if and only if $C$ is
-dictatorial: there exists $i$ for whom $C([\succ]) = argmax_O \succ_i$
-for all $[\succ] \in L^n$
-
-So any non-dictatorial social choice function on a full domain of
-preferences and with at least three alternatives will be manipulable by
-some agents for some preference profiles
+> [!NOTE]
+> Theorem (Gibbard-Satterthwaite)  
+>
+> Consider a social choice function $C: L^n \mapsto O$. suppose that
+>
+> 1.  There are at least three outcomes so that $|O| \ge 3$ and
+> 2.  $C$ is onto; that is, for every $o \in O$ there is a preference
+>    profile $[\succ]\in L^n$ such that $C([\succ])=o$
+>
+> Truthful reporting of preferences is a dominant strategy for each agent
+> $i$ and each preference $\succ_i \in L$ if and only if $C$ is
+> dictatorial: there exists $i$ for whom $C([\succ]) = argmax_O \succ_i$
+> for all $[\succ] \in L^n$
+>
+> So any non-dictatorial social choice functions on a full domain of
+> preferences and with at least three alternatives will be manipulable by
+> some agents for some preference profiles
 
 #### What does this mean?
 
@@ -401,23 +407,21 @@ some agents for some preference profiles
 
 ## 9-6 Transferable Utility
 
-Definition (Quasilinear preferences with transferable utility)  
-Agents have **quasilinear preferences with transferable utility** in an
-$n$-player Bayesian game when the set of outcomes is
-
-$$
-O=X\times\mathbb{R^n}
-$$
-
-for a set $X$, if the utility of an agent $i$ given joint type $\theta$
-can be written
-
-$$
-u_i(o,\theta)=u_i(x,\theta)-p_i
-$$
-
-where $o=(x,p)$ is an element of $O$, and
-$u_i: X \times \Theta \mapsto \mathbb{R}$
+> [!NOTE]
+> Definition (Quasilinear preferences with transferable utility)  
+>
+> Agents have **quasilinear preferences with transferable utility** in an
+> $n$-player Bayesian game when the set of outcomes is
+>
+> $$O=X\times\mathbb{R^n}$$
+>
+> for a set $X$, if the utility of an agent $i$ given joint type $\theta$
+> can be written
+>
+> $$u_i(o,\theta)=u_i(x,\theta)-p_i$$
+>
+> where $o=(x,p)$ is an element of $O$, and
+> $u_i: X \times \Theta \mapsto \mathbb{R}$
 
 #### Transferable utility mechanisms
 
@@ -442,12 +446,14 @@ $u_i: X \times \Theta \mapsto \mathbb{R}$
 
 #### Direct Mechanisms in a Quailinear Setting
 
-Definition (Direct mechanism)  
-A \_\_direct mechanism (in a quasilinear setting
-$(N,O = X \times \mathbb{R^n},\Theta,p,u)$) is a pair
-$(\chi,\mathbb{p})$ specifying a basic outcome $\chi(\theta)$ and a
-profile of payments or transfers
-$\mathbb{p}(\theta)=(\mathbb{p_1}(\theta),…,\mathbb{p_n}(\theta))$
+> [!NOTE]
+> Definition (Direct mechanism)  
+>
+> A **direct mechanism** (in a quasilinear setting
+> $(N,O = X \times \mathbb{R^n},\Theta,p,u)$ ) is a pair
+> $(\chi,\mathbb{p})$ specifying a basic outcome $\chi(\theta)$ and a
+> profile of payments or transfers
+> $\mathbb{p}(\theta)=(\mathbb{p_1}(\theta),…,\mathbb{p_n}(\theta))$
 
 #### Private Values (Conditional Utility Independence)
 
@@ -506,7 +512,7 @@ $\mathbb{p}(\theta)=(\mathbb{p_1}(\theta),…,\mathbb{p_n}(\theta))$
 
   - $p_i =0$ for all $i$
 
-- Truth is an equilibrium, but sometimes get negative utility and choice
+- Truth is an equilibrium, but sometimes gets negative utility and choice
   does not maximize total utility
 
 #### Another Example of a transferable utility mechanism
@@ -547,20 +553,22 @@ $\mathbb{p}(\theta)=(\mathbb{p_1}(\theta),…,\mathbb{p_n}(\theta))$
 
 #### Truthfulness
 
-Definition (Truthfulness)  
-A transferable utility mechanism is **truthful** if it is direct and
-$\forall i \forall v_i$, agent $i$’s equilibrium strategy is to adopt
-the strategy $\hat{v_i}=v_i$
+> [!NOTE]
+> Definition (Truthfulness)  
+>
+> A transferable utility mechanism is **truthful** if it is direct and
+> $\forall i \forall v_i$, agent $i$’s equilibrium strategy is to adopt
+> the strategy $\hat{v_i}=v_i$
 
 #### Efficiency
 
-Definition (Efficiency)  
-A transferable utility mechanism is **strictly Pareto efficient**, or
-just **efficient**, if in equilibrium it selects a choice $x$ such that
-
-$$
-\forall v \forall x', \sum_{i}v_i(x) \ge \sum_{i}v_i(x')
-$$
+> [!NOTE]
+> Definition (Efficiency)  
+>
+> A transferable utility mechanism is **strictly Pareto efficient**, or
+> just **efficient**, if in equilibrium it selects a choice $x$ such that
+>
+> $$\forall v \forall x', \sum_{i}v_i(x) \ge \sum_{i}v_i(x')$$
 
 - An efficient mechanism selects the choice that maximizes the sum of
   agents’ utilities, disregarding monetary payments
@@ -571,10 +579,10 @@ $$
   - if we include the mechanism as an agent, all Pareto-efficient
     outcomes involve the same choice (and different payments)
 
-  - any outcome involving another choice is Pareto dominated: some
+  - any outcome involving another choice is Pareto-dominated: some
     agents could pay others such that all would prefer the swap
 
-- Called **economic efficiency** to distinguish from other (e.g.,
+- Called **economic efficiency** to distinguish from others (e.g.,
   computational) notions
 
 - Also called **social-welfare maximization**
@@ -583,14 +591,13 @@ $$
 
 #### Budget Balance
 
-Definition (Budget balance)  
-A transferrable utility mechanism is **budget balanced** when
 
-$$
-\forall v, \sum_{i}\mathbb{p_i}(s(v))=0,
-$$
-
-where $s$ is the equilibrium strategy profile
+> [!NOTE]
+> Definition (Budget balance)  
+> A transferrable utility mechanism is **budget balanced** when
+>
+> $$\forall v, \sum_{i}\mathbb{p_i}(s(v))=0,$$
+> where $s$ is the equilibrium strategy profile
 
 - regardless of the agents’ types, the mechanism collects and disburses
   the same amount of money from and to the agents
@@ -613,26 +620,33 @@ $$
 
 #### Individual-Rationality
 
-Definition (Ex interim individual rationality)  
-A mechanism is **ex interim individual rational** when
-$\forall i \forall v_i, \mathbb{E_{v_{-i}|v_i}}v_i(\chi(s_i(v_i), s_{-i}(v_{-1})))-\mathbb{p_i}(s_i(v_i), s_{-i}(v_{-i}))\ge 0$
-where $s$ is the equilibrium strategy profile
+> [!NOTE]
+> Definition (Ex interim individual rationality)  
+>
+> A mechanism is **ex interim individual rational** when
+> $\forall i \forall v_i, \mathbb{E_{v_{-i}|v_i}}v_i(\chi(s_i(v_i), s_{-i}(v_{-1})))-\mathbb{p_i}(s_i(v_i), s_{-i}(v_{-i}))\ge 0$
+> where $s$ is the equilibrium strategy profile
 
 - no agent loses by participating in the mechanism
 
 - ex *interim* because it holds for every possible valuation for agent
   $i$, but averages over the possible valuations of the other agents
 
-Definition (Ex post individual rationality)  
-A mechanism is **ex post individual rational**
-when$\forall i \forall v, v_i(\chi(s(v)))-\mathbb{p_i}(s(v)))\ge 0$
-where $s$ is the equilibrium strategy profile
+
+> [!NOTE]
+> Definition (Ex post individual rationality)  
+>
+> A mechanism is **ex post individual rational**
+> when$\forall i \forall v, v_i(\chi(s(v)))-\mathbb{p_i}(s(v)))\ge 0$
+> where $s$ is the equilibrium strategy profile
 
 #### Tractability
 
-Definition (Tractability)  
-A mechanism is **tractable** when $\forall \hat{v}, \chi(\hat{v})$ and
-$\mathbb{p}(\hat{v})$ can be computed in polynomial time
+> [!NOTE]
+> Definition (Tractability)  
+>
+> A mechanism is **tractable** when $\forall \hat{v}, \chi(\hat{v})$ and
+> $\mathbb{p}(\hat{v})$ can be computed in polynomial time
 
 - The mechanism is (guaranteed to be) computationally feasible
 
@@ -641,12 +655,14 @@ $\mathbb{p}(\hat{v})$ can be computed in polynomial time
 We can also add an objective function to our mechanism. One example:
 revenue maximization
 
-Definition (Revenue maximization)  
-A mechanism is **Revenue maximizing** when, among the set of functions
-$\chi$ and $\mathbb{p}$ that satisfy the other constraints, the
-mechanism selects the $\chi$ and $\mathbb{p}$ that maximize
-$\mathbb{E_\theta}\sum_i p_i(s(\theta))$, where $s(\theta)$ denotes the
-agents’ equilibrium strategy profile
+> [!NOTE]
+> Definition (Revenue maximization)  
+>
+> A mechanism is **Revenue maximizing** when, among the set of functions
+> $\chi$ and $\mathbb{p}$ that satisfy the other constraints, the
+> mechanism selects the $\chi$ and $\mathbb{p}$ that maximize
+> $\mathbb{E_\theta}\sum_i p_i(s(\theta))$, where $s(\theta)$ denotes the
+> agents’ equilibrium strategy profile
 
 - The mechanism designer can choose among mechanisms that satisfy the
   desired constraints by adding an objective function such as revenue
@@ -661,15 +677,17 @@ agents’ equilibrium strategy profile
 - Set weak budget balance as a constraint and add the following
   objective
 
-Definition (Revenue maximization)  
-A mechanism is **Revenue minimizing** when, among the set of functions
-$\chi$ and $\mathbb{p}$ that satisfy the other constraints, the
-mechanism selects the $\chi$ and $\mathbb{p}$ that minimize
-$max_v\sum_i p_i(s(\theta))$, where $s(\theta)$ denotes the agents’
-equilibrium strategy profile
+> [!NOTE]
+> Definition (Revenue maximization)  
+>
+> A mechanism is **Revenue minimizing** when, among the set of functions
+> $\chi$ and $\mathbb{p}$ that satisfy the other constraints, the
+> mechanism selects the $\chi$ and $\mathbb{p}$ that minimize
+> $max_v\sum_i p_i(s(\theta))$, where $s(\theta)$ denotes the agents’
+> equilibrium strategy profile
 
 - Note: this considers the **worst case** over valuations; we could
-  consider average case instead
+  consider the average case instead
 
 #### Fairness
 
@@ -682,16 +700,16 @@ equilibrium strategy profile
 
 - **Maxmin fairness**: make the least-happy agent the happiest
 
-Definition (Maxmin fairness)  
-A transferrable utility mechanism is **maxmin fair** when, among the set
-of functions $\chi$ and $\mathbb{p}$ that satisfy the other constraints,
-the mechanism selects the $\chi$ and $\mathbb{p}$ that maximize
-
-$$
-\mathbb{E_v}\big[ \min_{i \in N} v_i (\chi(s(v)))-\mathbb{p_i}(s(v))  \big]
-$$
-
-where $s(v)$ denotes the agents’ equilibrium strategy profile
+> [!NOTE]
+> Definition (Maxmin fairness)  
+>
+> A transferrable utility mechanism is **maxmin fair** when, among the set
+> of functions $\chi$ and $\mathbb{p}$ that satisfy the other constraints,
+> the mechanism selects the $\chi$ and $\mathbb{p}$ that maximize
+>
+> $$\mathbb{E_v}\big[ \min_{i \in N} v_i (\chi(s(v)))-\mathbb{p_i}(s(v))  \big]$$
+>
+> where $s(v)$ denotes the agents’ equilibrium strategy profile
 
 #### Price of Anarchy Minimization
 
@@ -700,19 +718,19 @@ where $s(v)$ denotes the agents’ equilibrium strategy profile
 - Minimize the **worst-case ratio** between optimal social welfare and
   the social welfare achieved by the given mechanism
 
-Definition (Price-of-anarchy minimization)  
-A transferrable utility mechanism **minimizes the price of anarchy**
-when, among the set of functions $\chi$ and $\mathbb{p}$ that satisfy
-the other constraints, the mechanism selects the $\chi$ and $\mathbb{p}$
-that minimize
-
-$$
-\max_{v \in V}\frac{\max_{x \in X} \sum_{i \in N} v_i(x)}{\sum_{i \in N}v_i(\chi(s(v)))}
-$$
-
-where $s(v)$ denotes the agents’ equilibrium strategy profile in the
-*worst* equilibrium of the mechanism-i.e., the equilibrium in which
-$\sum_{i \in N} v_i(\chi(s(v)))$ is the smallest
+> [!NOTE]
+> Definition (Price-of-anarchy minimization)  
+>
+> A transferrable utility mechanism **minimizes the price of anarchy**
+> when, among the set of functions $\chi$ and $\mathbb{p}$ that satisfy
+> the other constraints, the mechanism selects the $\chi$ and $\mathbb{p}$
+> that minimize
+>
+> $$\max_{v \in V}\frac{\max_{x \in X} \sum_{i \in N} v_i(x)}{\sum_{i \in N}v_i(\chi(s(v)))}$$
+>
+> where $s(v)$ denotes the agents’ equilibrium strategy profile in the
+> *worst* equilibrium of the mechanism-i.e., the equilibrium in which
+> $\sum_{i \in N} v_i(\chi(s(v)))$ is the smallest
 
 ## Resource
 
