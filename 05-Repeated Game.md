@@ -1,9 +1,7 @@
 05 - Repeated Games
 ================
-Yeonju Kim
-2024-01-19
 
-# 5-1 Repeated Games
+## 5-1 Repeated Games
 
 - Many (most?) interactions occur more than once:
 
@@ -40,7 +38,7 @@ Yeonju Kim
     - constantly changing sources of production can hurt, but growing
       demand can help
 
-# 5-2 Infinitely Repeated Games: Utility
+## 5-2 Infinitely Repeated Games: Utility
 
 What is a player’s utility for playing an infinitely repeated game?
 
@@ -48,22 +46,23 @@ What is a player’s utility for playing an infinitely repeated game?
 
 - The sum of payoffs in the stage game?
 
-Definition  
-Given an infinite sequence of payoffs $r_1,r_2,…$ for player $i$, the
-**average reward** of $i$ is $$
-\lim_{k\rightarrow \infty }\sum^k_{j=1}\frac{r_j}{k}
-$$
+> [!NOTE]
+> Definition  
+>
+> Given an infinite sequence of payoffs $r_1,r_2,…$ for player $i$, the
+> **average reward** of $i$ is
+> $$\lim_{k\rightarrow \infty }\sum^k_{j=1}\frac{r_j}{k}$$
 
-### Discounted reward
+#### Discounted reward
 
-Definition  
-Given an infinite sequence of payoffs $r_1,r_2,…$ for player $i$ and
-discount factor $\beta$ with $0<\beta,1$, $i$’s **future discounted
-reward** is
-
-$$
-\sum^\infty_{j=1}\beta^j r_j
-$$
+> [!NOTE]
+> Definition  
+>
+> Given an infinite sequence of payoffs $r_1,r_2,…$ for player $i$ and
+> discount factor $\beta$ with $0<\beta,1$, $i$’s **future discounted
+> reward** is
+> 
+> $$\sum^\infty_{j=1}\beta^j r_j$$
 
 - Two equivalent interpretations of the discount factor:
 
@@ -72,9 +71,9 @@ $$
   2.  the agent cares about the future just as much as the present, but
       with probability $1-\beta$ the game will end in any given round
 
-# 5-3 Stochastic Games
+## 5-3 Stochastic Games
 
-### Stochastic Games
+#### Stochastic Games
 
 - What if we didn’t always repeat back to the same stage game?
 
@@ -85,27 +84,29 @@ $$
   - the game played at any iteration depends on the previous game played
     and on the actions taken by all agents in that game
 
-### Formal Definition
+#### Formal Definition
 
-Definition  
-A **stochastic game** is a tuple $(Q,N,A,P,R)$, where
+> [!NOTE]
+> Definition  
+>
+> A **stochastic game** is a tuple $(Q,N,A,P,R)$, where
+>
+> - $Q$ is a finite set of states
+>
+> - $N$ is a finite set of $n$ players
+>
+> - $A=A_1 \times \dots \times A_n$, where $A_i$ is a finite set of
+>  actions available to player $i$
+>
+> - $P: Q \times A \times Q \rightarrow [0,1]$ is the transition
+>  probability functions; \$P(q,a,\hat p \$ is the probability of
+>  transitioning from state $q$ to state $\hat p$ after joint action $a$,
+>  and
+>
+> - $R=r_1, \dots ,r_n$, where $r_i:Q \times A \rightarrow R$ is a real
+>  valued payoff function for player $i$
 
-- $Q$ is a finite set of states
-
-- $N$ is a finite set of $n$ players
-
-- $A=A_1 \times \dots \times A_n$, where $A_i$ is a finite set of
-  actions available to player $i$
-
-- $P: Q \times A \times Q \rightarrow [0,1]$ is the transition
-  probability functions; \$P(q,a,\hat p \$ is the probability of
-  transitioning from state $q$ to state $\hat p$ after joint action $a$,
-  and
-
-- $R=r_1, \dots ,r_n$, where $r_i:Q \times A \rightarrow R$ is a real
-  valued payoff function for player $i$
-
-### Remark
+#### Remark
 
 - This definition assumes strategy space in the same in all games
 
@@ -115,9 +116,9 @@ A **stochastic game** is a tuple $(Q,N,A,P,R)$, where
 
   - i.e. MDP is a single-agent stochastic game
 
-# 5-4 Learning in Repeated Games
+## 5-4 Learning in Repeated Games
 
-### Introduction
+#### Introduction
 
 - We will cover two types of learning in repeated games
 
@@ -128,7 +129,7 @@ A **stochastic game** is a tuple $(Q,N,A,P,R)$, where
 - In general Learning in Game Theory is a rich subject with many facets
   we will not be covering
 
-### Fictitious Play
+#### Fictitious Play
 
 - Initially proposed as a method for computing Nash equilibrium
 
@@ -175,52 +176,58 @@ Example using matching pennies
 | 7     | H          | T          | (6.5,4)     | (6,4.5)     |
 | …     | …          | …          | …           | …           |
 
-### Convergence
+#### Convergence
 
-Theorem  
-If the empirical distribution of each player’s strategies converges in
-fictitious play, then it converges to a Nash equilibrium
+> [!NOTE]
+> Theorem
+>   
+> If the empirical distribution of each player’s strategies converges in
+> fictitious play, then it converges to a Nash equilibrium
 
-Theorem  
-Each of the following are a sufficient conditions for the empirical
-frequencies of play to converge in fictitious play:
+> [!NOTE]
+> Theorem  
+>
+> Each of the following are a sufficient conditions for the empirical
+> frequencies of play to converge in fictitious play:
+>
+> - The game is zero sum;
+>
+> - The game is solvable by iterated elimination of strictly dominated
+>  strategies;
+>
+> - The game is a potential game;
+>
+> - This game is $2 \times n$ and has generic payoffs
 
-- The game is zero sum;
+#### No-regret Learning
 
-- The game is solvable by iterated elimination of strictly dominated
-  strategies;
+> [!NOTE]
+> Definition (Regret)  
+>
+> The **regret** an agent experiences at time $t$ for not having played
+> $s$ is $R^t(s) = \alpha^t - \alpha^t(s)$
 
-- The game is a potential game;
-
-- This game is $2 \times n$ and has generic payoffs
-
-### No-regret Learning
-
-Definition (Regret)  
-The **regret** an agent experiences at time $t$ for not having played
-$s$ is $R^t(s) = \alpha^t - \alpha^t(s)$
-
-Definition (No-regret learning rule)  
-A learning rule exhibits **no regret** if for any pure strategy of the
-agents $s$ it holds that $Pr([\lim \inf R_t(s) \le 0]=1$
+> [!NOTE]
+> Definition (No-regret learning rule)  
+>
+> A learning rule exhibits **no regret** if for any pure strategy of the
+> agents $s$ it holds that $Pr([\lim \inf R_t(s) \le 0]=1$
 
 - Example learning rule that exhibits no regret: **Regret Matching**
 
 - At each time step each action is chosen with probability proportional
   to its regret. That is,
 
-  $$
-  \sigma^{t+1}_i(s) = \frac{R_t(s)}{\sum_{s' \in S_i}R_t(s')}
-  $$
+$$\sigma^{t+1} _ i(s)=\frac{R_t(s)}{\sum_{s' \in S_i}R_t(s')}$$
 
 - where $\sigma^{t+1}_i(s)$ is the probability that agent $i$ plays pure
   strategy $s$ at time t+1
 
 - Converges to a correlated equilibrium for finite games
 
-# 5-5 Equilibria of Infinitely Repeated Games
+## 5-5 Equilibria of Infinitely Repeated Games
 
-### Strategy Space
+#### Strategy Space
 
 - What is a pure strategy in an infinitely-repeated game?
 
@@ -238,7 +245,7 @@ agents $s$ it holds that $Pr([\lim \inf R_t(s) \le 0]=1$
   - **Trigger**: Start out cooperating. If the opponent ever defects,
     defect forever
 
-### Nash equilibria
+#### Nash equilibria
 
 - With an infinite number of pure strategies, what can we say about Nash
   equilibria?
@@ -262,30 +269,36 @@ agents $s$ it holds that $Pr([\lim \inf R_t(s) \le 0]=1$
   - $i$’s **minmax value**: the amount of utility $i$ can get when $-i$
     play a minmax strategy against him
 
-Definition  
-A payoff profile $r$ is **enforceable** if $r_i \ge u_i$
+> [!NOTE]
+> Definition
+> 
+> A payoff profile $r$ is **enforceable** if $r_i \ge u_i$
 
-Definition  
-A payoff profile $r$ is **feasible** if there exist rational,
-non-negative value $\alpha_a$ such that for all $i$. we can express
-$r_i$ as $\sum_{a \in A} \alpha_a u_i(a)$, with
-$\sum_{a \in A} \alpha_a =1$
+> [!NOTE]
+> Definition  
+>
+> A payoff profile $r$ is **feasible** if there exist rational,
+> non-negative value $\alpha_a$ such that for all $i$. we can express
+> $r_i$ as $\sum_{a \in A} \alpha_a u_i(a)$, with
+> $\sum_{a \in A} \alpha_a =1$
 
 - feasible: a convex, rational combination of the outcomes in $G$
 
-### Folk Theorem
+#### Folk Theorem
 
-Theorem (Folk Theorem\_  
-Consider any $n$-player game $G$ and any payoff vector $(r_1,r_2,…,r_n)$
+> [!NOTE]
+> Theorem (Folk Theorem) 
+>
+> Consider any $n$-player game $G$ and any payoff vector $(r_1,r_2,…,r_n)$
+> 
+> 1.  If $r$ is the payoff in any Nash equilibrium of the infinitely
+>     repeated $G$ with average rewards, then for each player $i$, $r_i$
+>     is enforceable
+> 2.  If $r$ is both feasible and enforceable, then $r$ is the payoff in
+>     some Nash equilibrium of the infinitely repeated $G$ with average
+>    rewards
 
-1.  If $r$ is the payoff in any Nash equilibrium of the infinitely
-    repeated $G$ with average rewards, then for each player $i$, $r_i$
-    is enforceable
-2.  If $r$ is both feasible and enforceable, then $r$ is the payoff in
-    some Nash equilibrium of the infinitely repeated $G$ with average
-    rewards
-
-### Part 1
+#### Part 1
 
 **Payoff in Nash** $\rightarrow$ **enforceable**
 
@@ -299,7 +312,7 @@ stage game if he adopts this strategy, and so $i$’s average reward is
 also at least $v_i$. Thus $i$ cannot receive the payoff $r_i < v_i$ in
 any Nash equilibrium.
 
-### Part 2
+#### Part 2
 
 **Feasible and enfoceable** $\rightarrow$ **Nash**
 
@@ -324,7 +337,7 @@ player $j$ deviates at some point. Then, forever after player $j$ will
 receive is $minmax$ payoff $v_j \le r_j$, rendering the deviation
 unprofitable.
 
-# 5-6 Discounted Repeated Games
+## 5-6 Discounted Repeated Games
 
 - The future is uncertain, we are often motivated by what happens today
 
@@ -349,7 +362,7 @@ $$
 \sum_{t} \beta_i^t u_i(a_t)
 $$
 
-### Histories
+#### Histories
 
 - Histories of length $t: H^t = \{h^t:h^t=(a^1,...,a^t) \in A_t\}$
 
@@ -357,16 +370,16 @@ $$
 
 - A strategy $s_i: H \rightarrow \Delta (A_i)$
 
-### Prisoners Dilemma
+#### Prisoners Dilemma
 
 - $A_i = \{C,D\}$
 
-- A history for three periods: (C,C), (C,D), (D,D)
+- A history for three periods: $(C,C), (C,D), (D,D)$
 
 - A strategy for period 4 would specify what a player would do after
-  seeing (C,C), (C,D), (D,D) played in the first three periods
+  seeing $(C,C), (C,D), (D,D)$ played in the first three periods
 
-### Subgame Perfection
+#### Subgame Perfection
 
 - Profile of strategies that are Nash in every subgame
 
@@ -375,7 +388,7 @@ $$
 - Repeatedly playing a Nash equilibrium of the stage game is always a
   subgame perfect equilibrium of the repeated game
 
-### Repeated Prisoner’s Dilemma
+#### Repeated Prisoner’s Dilemma
 
 - Cooperate as long as everyone has in the past
 
@@ -414,7 +427,12 @@ $$
 
 - What is we make defection more attractive:
 
-$$ \begin{array}{ccc} & \begin{array}{ccc} C & D  \end{array} \\ \begin{array}{cccc} C \\ D \\ \end{array} & \left[ \begin{array}{cccc} 3,3 & 0,10 \\ 10,0 & 1,1 \end{array} \right]\end{array} $$
+$$\begin{array}{ccc} & \begin{array}{ccc} C & D  \end{array} \\ 
+\begin{array}{cccc} C \\ D \\ 
+\end{array} & \left[ 
+\begin{array}{cccc} 3,3 & 0,10 \\
+10,0 & 1,1 \end{array} \right]
+\end{array}$$
 
 - Let’s check that nobody wants to deviate if everyone has cooperated in
   the past:
@@ -428,9 +446,9 @@ $$ \begin{array}{ccc} & \begin{array}{ccc} C & D  \end{array} \\ \begin{array}{c
 - Difference is non-negative if $\beta\frac{2}{1-\beta}-7 \ge0$ or
   $2\beta \ge 7(1-\beta)$, so $\beta \ge 7/9$
 
-- Need to care about tomorrow at least 7/9 as much as today
+- Need to care about tomorrow at least $7/9$ as much as today
 
-### Discounted Repeated Games
+#### Discounted Repeated Games
 
 - Basic logic:
 
@@ -442,9 +460,9 @@ $$ \begin{array}{ccc} & \begin{array}{ccc} C & D  \end{array} \\ \begin{array}{c
 
     - and is credible: it is an equilibrium in the subgame
 
-# 5-7 A Folk Theorem for Discounted Repeated Games
+## 5-7 A Folk Theorem for Discounted Repeated Games
 
-### A (Simple) Folk Theorem for Discounted Repeated Games
+#### A (Simple) Folk Theorem for Discounted Repeated Games
 
 - Consider a finite normal form game $G = (N,A,u)$
 
@@ -484,13 +502,19 @@ every period on the equilibrium path
     $\frac{M}{m}\le\frac{\beta_i}{1-\beta_1}$ or
     $\beta \ge \frac{M}{M+m}$ for all $i$
 
-### Repeated Prisoner’s Dilemma
+#### Repeated Prisoner’s Dilemma
 
 - More complicated play: something to think about
 
-$$ \begin{array}{ccc} & \begin{array}{ccc} C & D  \end{array} \\ \begin{array}{cccc} C \\ D \\ \end{array} & \left[ \begin{array}{cccc} 3,3 & 0,10 \\ 10,0 & 1,1 \end{array} \right]\end{array} $$
 
-### Repeated Games
+$$\begin{array}{ccc} & \begin{array}{ccc} C & D  \end{array} \\ 
+\begin{array}{cccc} C \\ D \\ 
+\end{array} & \left[ 
+\begin{array}{cccc} 3,3 & 0,10 \\
+10,0 & 1,1 \end{array} \right]
+\end{array}$$
+
+#### Repeated Games
 
 - Players can condition future play on past actions
 
@@ -503,6 +527,6 @@ $$ \begin{array}{ccc} & \begin{array}{ccc} C & D  \end{array} \\ \begin{array}{c
   - Sufficient value to the future (limit of the means - extreme value)
     or high enough discount factor
 
-### Resources
+#### Resources
 
 Game Theory: <https://www.coursera.org/learn/game-theory-1>
