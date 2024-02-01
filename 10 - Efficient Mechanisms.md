@@ -50,35 +50,36 @@ to Chicago, 1881
 
 #### Groves Mechanisms
 
-Definition (Groves mechanism)  
-Direct mechanisms, $(\chi, \mathbb{p})$, such that
+> [!NOTE]
+> Definition (Groves mechanism)  
+>
+> Direct mechanisms, $(\chi, \mathbb{p})$, such that
+>
+> $$\chi(\hat{v}) \in arg \max_x \sum_i \hat{v_i}(x)$$
+> 
+> $$\mathbb{p_i} = h_i(\hat{u} _ {-i})-\sum_{j \not= i} \hat{v_j}(\chi(\hat{v})$$
 
-$$
- \chi(\hat{v}) \in arg \max_x \sum_i \hat{v_i}(x)
-\\
-\mathbb{p_i} = h_i(\hat{u}_{-i})-\sum_{j \not= i} \hat{v_j}(\chi(\hat{v})
-$$
-
-Some people refer these as VCG mechanisms, although that name has more
+Some people refer to these as VCG mechanisms, although that name has more
 recently started to be used to refer to a specific mechanism within this
 class
 
 #### The Vickrey-Clarke-Groves Mechanism
 
-Definition (A Vickrey-Clarke-Groves (VCG) mechanism, a.k.a. a Pivotal mechanism)  
-A **Vickrey-Clarke-Groves mechanism** or a **pivotal mechanism** is a
-Groves mechanism $(\chi, \mathbb{p})$, such that
+> [!NOTE]
+> Definition (A Vickrey-Clarke-Groves (VCG) mechanism, a.k.a. a Pivotal mechanism)  
+>
+> A **Vickrey-Clarke-Groves mechanism** or a **pivotal mechanism** is a
+> Groves mechanism $(\chi, \mathbb{p})$, such that
 
-$$
-\chi(\hat{v})\in arg \max_x \sum_i\hat{v_i}(x) \\
-\mathbb{p_i}(\hat{v})= \max_x \sum_{j \not=i} \hat{v_j}(x) - \sum_{j \not= i} \hat{v_j}(\chi(\hat{v}))
-$$
+$$\chi(\hat{v})\in arg \max_x \sum_i\hat{v_i}(x)$$
+
+$$\mathbb{p_i}(\hat{v})= \max_x \sum_{j \not=i} \hat{v_j}(x) - \sum_{j \not= i} \hat{v_j}(\chi(\hat{v}))$$
 
 #### VCG discussion
 
 - You get paid everyone’s utility under the allocation that is actually
   chosen
-  - except your own, but you get that directly as utility
+  - except your own, but you get that directly as a utility
 - Then you get charged everyone’s utility in the world where you don’t
   participate
 - Thus you pay your **social cost (** $\mathbb{p_i(\hat{v}})$ is social
@@ -91,23 +92,23 @@ $$
 
 #### VCG and Groves Mechanisms: Truthfulness
 
-Theorem  
-Truth telling is a dominant strategy under any Groves mechanism
-including the pivotal mechanism (a VCG mechanism)
+> [!NOTE]
+> Theorem  
+>
+> Truth telling is a dominant strategy under any Groves mechanism
+> including the pivotal mechanism (a VCG mechanism)
 
 Consider agent $i$’s problem of choosing the best strategy $\hat{v_i}$.
 A best strategy for $i$ is solves
 
 $$
-\max_{\hat{v_i}}(v_i(\chi(\hat{v})-\mathbb{p}_i(\hat{v_i},\hat{v_{-i}}))
+\max_{\hat{v_i}}(v_i(\chi(\hat{v})-\mathbb{p}_ i(\hat{v_i},\hat{v_{-i}}))
 $$
 
 Substituting in the payment function for a Groves mechanism this
 becomes:
 
-$$
-\max_{\hat{v_i}} \big[ v_i(\chi(\hat{v}))-h_i(\hat{v}_{-i})+\sum_{j \not= i} \hat{v}_j(\chi(\hat{v})) \big]   
-$$
+$$\max_{\hat{v_i}} \big[ v_i(\chi(\hat{v}))-h_i(\hat{v}_ {-i})+\sum_{j \not= i} \hat{v}_j(\chi(\hat{v})) \big]$$
 
 Since $h_i(\hat{v}_{-i})$ does not depend on $\hat{v_i}$, it is
 sufficient to solve
@@ -119,9 +120,7 @@ $$
 So, $i$ would like to pick a declaration $\hat{v_i}$ that will lead the
 mechanism to pick an $x \in X$ which solves
 
-$$
-\max_x [v_i(x)+\sum_{j \not= i} \hat{v_j}(x)] \label{eq1}
-$$
+$$\max_x [v_i(x)+\sum_{j \not= i} \hat{v_j}(x)]$$
 
 Under a Groves mechanism,
 
@@ -135,14 +134,16 @@ dominant strategy for agent $i$
 
 #### Groves Uniqueness
 
-Theorem (Green-Laffont)  
-Suppose that for all agents any $v_i: X \mapsto \mathbb{R}$ is a
-feasible preference. Then an “**efficient**” mechanism
-$(\chi,\mathbb{p})$ (such that
-$\chi(\hat{v})\in arg \max_x \sum_i \hat{v_i}(x)$ has truthful reporting
-as a dominant strategy for all agents and preferences **only if** it is
-Groves mechanism:
-$\mathbb{p_i}(v)= h(v_{-i})- \sum_{j \not= i} v_j(\chi(v))$
+> [!NOTE]
+> Theorem (Green-Laffont)  
+>
+> Suppose that for all agents any $v_i: X \mapsto \mathbb{R}$ is a
+> feasible preference. Then an “**efficient**” mechanism
+> $(\chi,\mathbb{p})$ (such that
+> $\chi(\hat{v})\in arg \max_x \sum_i \hat{v_i}(x)$ has truthful reporting
+> as a dominant strategy for all agents and preferences **only if** it is
+> Groves mechanism:
+> $\mathbb{p_i}(v)= h(v_{-i})- \sum_{j \not= i} v_j(\chi(v))$
 
 A proof can be found at <https://stanford.edu/~jacksonm/mechtheo.pdf>
 
@@ -162,7 +163,7 @@ A proof can be found at <https://stanford.edu/~jacksonm/mechtheo.pdf>
 
 #### Selfish routing example
 
-<img src="images/routing.png" width="325" />
+<img src="assets/images/routing.png" width="325" />
 
 - What outcome will be selected by $\chi$? path $ABEF$
 
@@ -247,7 +248,7 @@ A proof can be found at <https://stanford.edu/~jacksonm/mechtheo.pdf>
 Are VCG’s payments at least **close to the cost of the** *second*
 **shortest disjoint path**?
 
-<img src="images/notfrugal.png" width="488" />
+<img src="assets/images/notfrugal.png" width="488" />
 
 - The top path has a total cost of $c$
 
@@ -303,16 +304,20 @@ are added
 
 ## 10-4 VCG: Individual Rationality and Budget Balance in VCG
 
-Definition (Choice-set monotonicity)  
-An environment exhibits **choice-set monotonicity** if
-$\forall i , X_{-i} \subseteq X$
+> [!NOTE]
+> Definition (Choice-set monotonicity)  
+>
+> An environment exhibits **choice-set monotonicity** if
+> $\forall i , X_{-i} \subseteq X$
 
 - removing any agent weakly decreases - that is, never increases - the
   mechanism’s set of possible choices $X$
 
-Definition (No negative externalities)  
-An environment exhibits **no negative externalities** if
-$\forall i \forall x \in X_{-i}, v_i(x) \ge 0$
+> [!NOTE]
+> Definition (No negative externalities)  
+>
+> An environment exhibits **no negative externalities** if
+> $\forall i \forall x \in X_{-i}, v_i(x) \ge 0$
 
 - every agent has zero or positive utility for any choice that can be
   made without his participation
@@ -347,17 +352,18 @@ through the payment function)
 
 #### VCG Individual Rationality
 
-Theorem  
-The VCG mechanism is *Ex-post* individual rational when the choice set
-manotonicity and no negative externalities properties hold
+> [!NOTE]
+> Theorem  
+>
+> The VCG mechanism is *Ex-post* individual rational when the choice set
+> manotonicity and no negative externalities properties hold
 
 Proof  
 All agent truthfully declare their valuations in equilibrium. Then
 
-$$
-u_i=v_1(\chi(v)) - (\sum_{j \not = i}v_j(\chi (v_{-i}))\ \sum_{j \not = i} v_j (\chi (v)) \\
-= \sum_{i} v_i (\chi (v))-\sum_{j \not = i} v_j (\chi (v_{-1}))
-$$
+$$u_i=v_1(\chi(v)) - (\sum_{j \not = i}v_j(\chi (v_{-i}))\ \sum_{j \not = i} v_j (\chi (v))$$
+
+$$= \sum_{i} v_i (\chi (v))-\sum_{j \not = i} v_j (\chi (v_{-1}))$$
 
 $\chi(v)$ is the outcome that maximizes social welfare, and so the
 optimization could have picked $\chi(v_{-i})$ instead (by choice set
@@ -383,13 +389,15 @@ and thus Equation is non-negative
 
 #### Another property
 
-Definition (No single-agent effect)  
-An environment exhibits **no single-agent effect** if
-$\forall i,\forall v_{-i}, \forall x \in arg \max_y \sum_y v_j(y)$ there
-exists a choice $x'$ that is feasible without $i$ and that has
-$\sum_{j \not = i} v_j(x') \ge \sum_{j \not = i}v_j(x)$
+> [!NOTE]
+> Definition (No single-agent effect)  
+>
+> An environment exhibits **no single-agent effect** if
+> $\forall i,\forall v_{-i}, \forall x \in arg \max_y \sum_y v_j(y)$ there
+> exists a choice $x'$ that is feasible without $i$ and that has
+> $\sum_{j \not = i} v_j(x') \ge \sum_{j \not = i}v_j(x)$
 
-Welfare of agents other than $i$ is weakly increased by dropping $i$
+The welfare of agents other than $i$ is weakly increased by dropping $i$
 
 Example  
 Consider a single-sided auction. Dropping an agent just reduces the
@@ -397,9 +405,11 @@ amount of competition, making the other agents better off
 
 #### Good News
 
-Theorem  
-The VCG mechanism is weakly budget-balanced when the no single-agent
-effect property holds
+> [!NOTE]
+> Theorem  
+>
+> The VCG mechanism is weakly budget-balanced when the no single-agent
+> effect property holds
 
 Proof  
 Assume truth-telling in equilibrium. We must show that the sum of
@@ -419,10 +429,12 @@ Thus the result follows directly
 
 #### More good news
 
-Theorem (Krishra & Perry, 1998)  
-In any Bayesian game setting in which VCG is ex post individually
-rational, VCG collects at least as much revenue as any other efficient
-and ex interim *individually-rational mechanism*
+> [!NOTE]
+> Theorem (Krishra & Perry, 1998)  
+>
+> In any Bayesian game setting in which VCG is ex post individually
+> rational, VCG collects at least as much revenue as any other efficient
+> and ex interim *individually-rational mechanism*
 
 - This is somewhat surprising: does not require dominant strategies, and
   hence compares VCG is as budget balanced as any efficient mechanism
@@ -452,7 +464,7 @@ and ex interim *individually-rational mechanism*
 - Seller initially has the item and has a value for it of
   $\theta_S \in [0,1]$
 
-- Buyer has need for the item and has a value for it of
+- Buyer has a need for the item and has a value for it of
   $\theta_B \in [0,1]$
 
 #### An Example
@@ -480,7 +492,7 @@ and ex interim *individually-rational mechanism*
   - price of 1 leads to sale with probability 1/2, expecting utility of
     1/2
 
-  - Better to set the high price
+  - Better to set a high price
 
   - *Inefficient trade* (0.1,0) do not trade
 
@@ -488,11 +500,13 @@ and ex interim *individually-rational mechanism*
 
 #### Efficiency, Budget Balance and Individual Rationality
 
-Theorem (Myerson-Satterthwaite)  
-There exist distributions on the buyer’s and seller’s valuations such
-that; There does not exist any Bayesian incentive - compatible mechanism
-is simultaneously efficient, weakly budget balanced and interim
-individual rational
+> [!NOTE]
+> Theorem (Myerson-Satterthwaite)  
+>
+> There exist distributions on the buyer’s and seller’s valuations such
+> that; There does not exist any Bayesian incentive-compatible mechanism
+> is simultaneously efficient, weakly budget-balanced and interim
+> individual rational
 
 #### Proof
 
@@ -529,16 +543,16 @@ individual rational
     payment made by the buyer has to be at least that received by the
     seller
 
-1\. $p(1, 0.9) \ge 0.9$ by individual rationality of the seller
+1. $p(1, 0.9) \ge 0.9$ by individual rationality of the seller
 
-2\. $p(0.1, 0) \le 0.1$ by individual rationality of the buyer
+2. $p(0.1, 0) \le 0.1$ by individual rationality of the buyer
 
-3\. $p(0.1, 0.9) = 0$ by individual rationality of both the buyer and
+3. $p(0.1, 0.9) = 0$ by individual rationality of both the buyer and
 the seller
 
-4\. $p(1,0) =$ ?
+4. $p(1,0) =$ ?
 
-- incentive compatibility for seller of type $\theta_S =0$ not wanting
+- incentive compatibility for the seller of type $\theta_S =0$ not wanting
   to pretend to be $\theta_S =0.9$:
 
   - $\frac{p(1,0)}{2}+\frac{p(0.1,0)}{2} \ge \frac{p(1,0.9)}{2}+\frac{p(0.1,0.9)}{2}$,
@@ -562,7 +576,7 @@ the seller
 
   - necessitates some inefficiencies in voluntary trade
 
-  - tension between incentives and efficiency
+  - the tension between incentives and efficiency
 
 - Have you ever walked away from bargaining even when you initially
   thought a trade might have been possible?
