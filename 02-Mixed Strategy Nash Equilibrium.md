@@ -1,9 +1,9 @@
 02 - Mixed-Strategy Nash Equilibrium
 ================
 
-# 2-1 Mixed Strategies and Nash Equilibrium
+## 2-1 Mixed Strategies and Nash Equilibrium
 
-### Mixed Strategies
+#### Mixed Strategies
 
 - It would be a pretty bad idea to play any deterministic strategy in
   matching pennies
@@ -17,7 +17,7 @@
 - Let the set of **all strategy profiles** be
   $S =S_1 \times ... \times S_n$
 
-### Utility under Mixed Strategies
+#### Utility under Mixed Strategies
 
 - What is your **payoff** if all the players follow mixed strategy
   profile $s \in S$? We can’t just read this number from the game matrix
@@ -25,12 +25,11 @@
 
 - Instead, use the idea of **expected utility** from decision theory:
 
-$$
-u_i(s)=\sum_{a\in A}u_i(a)Pr(a|s)\\
-Pr(a|s)=\prod_{j\in N}s_j(a_j)
-$$
+$$u_i(s)=\sum_{a\in A}u_i(a)Pr(a|s)$$
 
-### Best Response and Nash Equilibrium
+$$Pr(a|s)=\prod_{j\in N}s_j(a_j)$$
+
+#### Best Response and Nash Equilibrium
 
 - Our definitions of best response and Nash equilibrium generalize from
   actions to strategies
@@ -50,7 +49,7 @@ $$
 > Theorem (Nash, 1950)  
 > *Every finite game has a Nash equilibrium*
 
-### Example: Matching Pennies
+#### Example: Matching Pennies
 
 Even though there is no pure strategy Nash equilibrium in matching pennies
 game, there is a mixed strategy Nash equilibrium. It is the probability of
@@ -76,7 +75,7 @@ $$
 
 </div>
 
-### Example: Coordination
+#### Example: Coordination
 
 Mixed strategy Nash equilibrium for Coordination game is the probability
 of $(0.5,0.5)$ again
@@ -101,7 +100,7 @@ $$
 
 </div>
 
-### Example: Prisoner’s Dilemma
+#### Example: Prisoner’s Dilemma
 
 All of the strategies $(C,C), (C,D), (D,C), (D,D)$ are mixed strategy Nash
 equilibrium for Prisoner’s Dilemma
@@ -126,9 +125,9 @@ $$
 
 </div>
 
-# 2-2 Computing Mixed Nash Equilibrium
+## 2-2 Computing Mixed Nash Equilibrium
 
-### Battle of the Sexes
+#### Battle of the Sexes
 
 - It’s hard in general to compute Nash equilibria, but it’s easy when
   you can guess the **support**
@@ -159,11 +158,11 @@ $$
 - Let player 2 play $B$ with $p$, $F$ with $1-p$
 - If player 1 best-responds with a mixed strategy, player 2 must make him indifferent between $F$ and $B$
 
-$$
-u_1(B) = u_1(F)//
-2p+0(1-p)=0p+1(1-p)//
-p=\frac{1}{3}//
-$$
+$$u_1(B) = u_1(F)$$
+
+$$2p+0(1-p)=0p+1(1-p)$$
+
+$$p=\frac{1}{3}$$
 
 - Likewise, player 1 must randomize to make player 2 indifferent
 
@@ -171,15 +170,15 @@ $$
 
 - Let player 1 play $B$ with $q$, $F$ with $1-q$
 
-$$
-u_2(B) = u_2(F)\\
-q+0(1-q)=0q+2(1-q)\\ 
-q=\frac{2}{3}
-$$
+$$u_2(B) = u_2(F)$$
+
+$$q+0(1-q)=0q+2(1-q)$$
+
+$$q=\frac{2}{3}$$
 
 - Thus the mixed strategies $(\frac{2}{3},\frac{1}{3}),(\frac{1}{3},\frac{2}{3})$ are a Nash equilibrium
 
-### Interpreting Mixed Strategy Equilibria
+#### Interpreting Mixed Strategy Equilibria
 
 What does it mean to play a mixed strategy? Different interpretations:
 
@@ -198,9 +197,9 @@ What does it mean to play a mixed strategy? Different interpretations:
   from a population, all having deterministic strategies. Mixed strategy
   gives the probability of getting each Pure Strategy
 
-# 2-3 Hardness Beyond 2x2 Games - Basic
+## 2-3 Hardness Beyond 2x2 Games - Basic
 
-### Algorithms
+#### Algorithms
 
 Two example algorithms for finding NE
 
@@ -210,7 +209,7 @@ Two example algorithms for finding NE
   - [Porter et al.,
     2008](https://www.sciencedirect.com/science/article/abs/pii/S0899825606000935)
 
-### From Algorithms to Complexity Analysis
+#### From Algorithms to Complexity Analysis
 
 Still, finding even a single Nash equilibrium seems hard; how do we
 capture that?
@@ -226,7 +225,7 @@ capture that?
   - PPAD is a subclass of TFNP where the proofs are based on parity
     arguments in directed graphs
 
-### The Complexity of the Nash Equilibrium
+#### The Complexity of the Nash Equilibrium
 
 > [!NOTE]
 > Theorem
@@ -236,9 +235,9 @@ capture that?
 > - for games with 3 players; \[Chen, Deng, 2005\] & \[Daskalakis, Papadimitriou, 2005\]
 > - for games with 2 players; \[Chen, Deng 2006\]
 
-# 2-4 Hardness Beyond 2x2 Games - Advanced
+## 2-4 Hardness Beyond 2x2 Games - Advanced
 
-### Early History
+#### Early History
 
 - 1928 von Neumann: existence of Equilibrium in 2-player, zero-sum games
   - proof uses Brouwer’s fixed point theorem;
@@ -252,35 +251,41 @@ capture that?
       1971, …
   - …all exponential in the worst-case
 
-### The Lemke-Howson Algorithm
+#### The Lemke-Howson Algorithm
 
 - LCP (Linear Complementarity) formulation
 
-$$
-\sum_{k \in A_2}u_1(a_1^j,a_2^k)s_2^k + r_1^j = U_1^* , \forall j \in A_1\\
-\sum_{k \in A_1}u_2(a_1^j,a_2^k)s_2^k + r_1^j = U_2^* , \forall j \in A_2 \\
-\sum_{k \in A_1}s_1^j=1 \\
-\sum_{k \in A_2}s_2^k=1 \\
-s_1^j \ge 0,s_2^k \ge 0,\forall j \in A_1, \forall k \in A_2 \\
-r_1^j \ge 0,r_2^k \ge 0,\forall j \in A_1, \forall k \in A_2 \\
-r_1^j \times s_1^j =0,r_2^j \times s_2^j =0,\forall j \in A_1, \forall k \in A_2
-$$
+$$\sum_{k \in A_2}u_1(a_1^j,a_2^k)s_2^k + r_1^j = U_1^* , \forall j \in A_1$$
 
-### Support Enumeration Method: Porter et al. 2004
+$$\sum_{k \in A_1}u_2(a_1^j,a_2^k)s_2^k + r_1^j = U_2^* , \forall j \in A_2$$
+
+$$\sum_{k \in A_1}s_1^j=1$$
+
+$$\sum_{k \in A_2}s_2^k=1$$
+
+$$s_1^j \ge 0,s_2^k \ge 0,\forall j \in A_1, \forall k \in A_2$$
+
+$$r_1^j \ge 0,r_2^k \ge 0,\forall j \in A_1, \forall k \in A_2$$
+
+$$r_1^j \times s_1^j =0,r_2^j \times s_2^j =0,\forall j \in A_1, \forall k \in A_2$$
+
+#### Support Enumeration Method: Porter et al. 2004
 
 - Step 1: Finding a NE with a specific support
 
-$$
-p(a\*{-i})u_i(a_i,a_{-i}) = v_i, i , a_i \_i \\
-p(a\*{-i})u_i(a_i,a_{-i}) v_i, i , a_i \_i \\
-p_i(a_i) , i , a_i \_i \\ 
-p_i(a_i) = 0, i , a_i \_i \\
-p_i(a\*{i}) = 1, I
-$$
+$$\sum_{a_{-1}\in\sigma_{-1}}p(a_{-i})u_i(a_i,a_{-i}) = v_i, \forall i \in \{1,2\}, a_i \in \sigma_i$$
+
+$$\sum_{a_{-1} \in \sigma_{-1}}p(a_{-i})u_i(a_i,a_{-i}) \le v_i, \forall i \in \{1,2\}, a_i \not \in \sigma_i$$
+
+$$p_i(a_i) \ge 0, \forall i \in {1,2}, a_i \in \sigma_i$$
+
+$$p_i(a_i) = 0, \forall i \in \{1,2\}, a_i \not \in \sigma_i$$
+
+$$\sum_{a_{i} \in \sigma_{i}}p_i(a_{i}) = 1, \forall i \in \{1,2\}$$
 
 - Step 2: Smart heuristic search through all sets of support
 
-### From Algorithms to Complexity Analysis
+#### From Algorithms to Complexity Analysis
 
 So, is it NP-complete to find a Nash equilibrium?
 
@@ -304,9 +309,9 @@ So, is it NP-complete to find a Nash equilibrium?
     for some player $i \in N$, does there exist an equilibrium of $G$ in
     which player $i$ plays action $a_i$ with zero probability?
 
-# 2-5 Example: Mixed Strategy Nash
+## 2-5 Example: Mixed Strategy Nash
 
-### Example - Soccer Penalty Kicks
+#### Example - Soccer Penalty Kicks
 
 - Mixed strategies in sports and competitive games
 - Be unpredictable
@@ -360,7 +365,7 @@ $$
 - $p$ probability goalie goes left; Kicker indifferent: $(1-p)1=0,75p$
   or $p=1/1.75=4/7$
 
-- Goalie goes Left more often than Right $(4/7 to 3/7)$, kicker goes Right
+- Goalie goes Left more often than Right $(4/7 \text{ to } 3/7)$, kicker goes Right
   with $4/7$
 
 - Goalie’s strategy adjusts, and the kicker actually adjusts to kick
@@ -374,7 +379,7 @@ $$
 - By adjusting the strategy to keep the kicker indifferent, the Goalie
   takes advantage of the kicker’s weak right kick and wins more often!
 
-### Summary
+#### Summary
 
 - A player must be indifferent between the actions he or she randomizes
   over
@@ -383,12 +388,12 @@ $$
 
 - Do players really do this? -\> Next Topic
 
-# 2-6 Data: Professional Sports and Mixed Strategies
+## 2-6 Data: Professional Sports and Mixed Strategies
 
 - Some counter-intuitive features…
 - Do people really play them?
 
-### Professional Soccer - Penalty Kicks
+#### Professional Soccer - Penalty Kicks
 
 - Ignacio Palacios-Heurta (2003) “Professionals Play Minimax” Review
   of Economic Studies”, Volume 70, pp385-415
@@ -429,7 +434,7 @@ Note that Row player is **Kicker**, and column player is **Goalie**
 - $0.42p_K+0.07(1-p_K)=0.05p_K+0.3(1-p_K)$ or $0.23(1-p_K)=0.37p_K$ or
   $p_K=23/60=0.38$
 
-### Soccer Penalty Kicks - The Data
+#### Soccer Penalty Kicks - The Data
 
 $$
 \begin{array}{cccc} &
@@ -447,7 +452,7 @@ $$
 \right]\end{array}
 $$
 
-### Mixed Strategies
+#### Mixed Strategies
 
 - Do players randomize well over time? Pretty well…
 
@@ -458,7 +463,7 @@ $$
   American Economic Review (2001) “Maximax Play and Wimbeldom” Volume
   91, pp1521-1538
 
-### Summary
+#### Summary
 
 - Some games have mixed strategy equilibria
 - A player must be indifferent between the actions he or she randomizes
@@ -469,6 +474,6 @@ $$
   - in nature: which way a squirrel runs to get out of your way
   - in society and business interactions: audits by tax authorities
 
-### Resources
+#### Resources
 
 Game Theory: <https://www.coursera.org/learn/game-theory-1>
