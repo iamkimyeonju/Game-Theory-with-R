@@ -470,8 +470,8 @@ distribution it is $2v_i -1$)
 > [!NOTE]
 > Definition (bidder-specific reserve price)  
 >
-> Bidder $i$’s bidder-specific reserve price $r_i^*$ is the value for
-> which $\psi_i(r_i^*) =0$
+> Bidder $i$’s bidder-specific reserve price $r_i*$ is the value for
+> which $\psi_i(r_i*) =0$
 
 #### Myerson’s Optimal Auctions
 
@@ -484,25 +484,25 @@ distribution it is $2v_i -1$)
 > the smallest valuation that he could have declared while still remaining
 > the winner:
 >
-> $$\inf\{ v_i^*: \psi_i(v_i^*) \ge 0 \text{ and } \forall j \not=i, \psi_i(v_i^*)\ge\psi_j(\hat{v_j)}\}$$
+> $$\inf\{ v_i*: \psi _i(v _i*) \ge 0 \text{ and } \forall j \not=i, \psi_i(v_i*) \ge \psi_j(\hat{v_j)}\}$$
 
 > [!NOTE]
 > Corollary (Myerson, 1981) 
 >
 > In a symmetric setting, the optimal (single-good) auction is a second
-> price auction with a reserve price of $r^* $ that solves
-> $r^* - \frac{1-F(r^*)}{f(r^*)}=0$
+> price auction with a reserve price of $r*$ that solves
+> $r* - \frac{1-F(r*)}{f(r*)}=0$
 
 #### Analyzing optimal auctions
 
 Optimal Auction  
 - winning agent: $i=\arg\max_i \psi_i(\hat{v_i})$, as long as
-  $v_i \ge r_i^*$
+  $v_i \ge r_i*$
 
 - $i$ is charged the smallest valuation that he could have declared
   while still remaining the winner,
 
-$$\inf\{v_i^* : \psi_i(v_i^*) \ge 0 \text{ and } \forall j \not = i, \psi_i(v_i^*) \ge \psi_j(\hat{v_ j)}\}$$
+$$\inf\{v_i* : \psi_i(v_i*) \ge 0 \text{ and } \forall j \not = i, \psi_i(v_i*) \ge \psi_j(\hat{v_ j)}\}$$
 
 - Is this VCG?
 
@@ -516,12 +516,12 @@ $$\inf\{v_i^* : \psi_i(v_i^*) \ge 0 \text{ and } \forall j \not = i, \psi_i(v_i^
   - neither the reserve prices nor the virtual valuation transformation
     depends on the agent’s declaration
 
-  - thus the proof that a second-price auction is dominant-strategy
+  - thus the proof that a second-price auction is dominant strategy
     truthful applies here as well
 
 - Why does this work?
 
-  - reserve prices are like compatitors: increase the payments of
+  - reserve prices are like competitors: increase the payments of
     winning bidders
 
   - the virtual valuations can increase the impact of weak bidders’
